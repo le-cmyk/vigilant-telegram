@@ -1,0 +1,27 @@
+name: "Daily watering check"
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 08:00 UTC (10:00 Paris)
+jobs:
+  water-plants:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: python-version: '3.x'
+      - name: Install dependencies
+        run: pip install pyyaml requests
+      - name: Run watering script
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python scripts/water_plants.py --file _data/plants.yml
+      - name: Commit & Push updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/plants.yml
+          git commit -m "chore: update watering dates"
+          git push

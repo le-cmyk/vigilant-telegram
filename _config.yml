@@ -1,0 +1,6 @@
+title: Plant Watering Scheduler
+baseurl: ""
+url: "https://<your-username>.github.io"
+theme: minima
+plugins:
+  - jekyll-data
