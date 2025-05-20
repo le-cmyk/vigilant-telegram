@@ -26,8 +26,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add _data/plants.yml
-          git commit -m "chore: add plant ${{ github.event.issue.title }}"
-          git push
+          # Check if there are staged changes before committing
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: add plant ${{ github.event.issue.title }}"
+            git push
+          else
+            echo "No changes to commit in _data/plants.yml."
+          fi
       - name: Close issue
         uses: peter-evans/close-issue@v4
         with:
