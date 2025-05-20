@@ -2,9 +2,9 @@ name: "Daily watering check"
 on:
   schedule:
     - cron: '0 8 * * *'  # 08:00 UTC (10:00 Paris)
-  push: # Keep push trigger for manual runs/testing
+  push:
     branches:
-      - master
+      - main # Changed from master to main
   workflow_dispatch: # Adding manual trigger option
 jobs:
   water-plants:
