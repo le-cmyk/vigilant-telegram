@@ -1,7 +1,7 @@
 name: "On remove plant issue"
 on:
   issues:
-    types: [opened]
+    types: [labeled] # Changed from 'push' to 'issues' trigger
 jobs:
   remove-plant:
     if: contains(github.event.issue.labels.*.name, 'remove-plant')
@@ -10,7 +10,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Setup Python
         uses: actions/setup-python@v4
-        with: python-version: '3.x'
+        with: # Corrected: 'with' should be on its own line
+          python-version: '3.x' # Corrected: 'python-version' indented under 'with'
       - name: Install dependencies
         run: pip install pyyaml
       - name: Remove plant from data file

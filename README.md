@@ -14,7 +14,13 @@ Supports:
 2. **GitHub Secrets**: In your repo Settings → Secrets & variables → Actions, add:
    - `TELEGRAM_BOT_TOKEN`
    - `TELEGRAM_CHAT_ID`
-3. **Push to `main`**: GitHub Pages will build the site, and Actions will handle additions, removals & notifications automatically.
+3. **Issue Templates (Recommended)**: To use the "Add Plant" and "Remove Plant" issue forms as described in the "Managing Plants" section:
+   - Create a folder named `.github/ISSUE_TEMPLATE` in your repository.
+   - Inside this folder, create Markdown files for your issue templates. For example:
+     - `add_plant.md` (for adding plants)
+     - `remove_plant.md` (for removing plants)
+   - These files should define the structure of your issues (e.g., using YAML frontmatter for forms or Markdown for basic templates). GitHub will then offer these as templates when you click "New issue".
+4. **Push to `main`**: GitHub Pages will build the site, and Actions will handle additions, removals & notifications automatically.
 
 ## Managing Plants
 
