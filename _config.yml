@@ -1,6 +1,6 @@
 title: Plant Watering Scheduler
 baseurl: ""
-url: "https://<your-username>.github.io"
+url: "https://le-cmyk.github.io/vigilant-telegram" # Replaced <your-username> and added repo name
 theme: minima
 plugins:
   - jekyll-data

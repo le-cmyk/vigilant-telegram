@@ -39,7 +39,7 @@ layout: default
 
 <script src="https://cdn.jsdelivr.net/npm/@octokit/core/dist-web/index.js"></script>
 <script>
-  const CLIENT_ID = "YOUR_CLIENT_ID_HERE";
+  const CLIENT_ID = "YOUR_CLIENT_ID_HERE"; // You still need to replace this if using OAuth form
   const REDIRECT_URI = window.location.origin + '/oauth-callback.html';
   const SCOPE = "repo";
 
@@ -47,6 +47,7 @@ layout: default
     const params = new URLSearchParams(location.search);
     if (params.has('code')) {
       const code = params.get('code');
+      // You still need to replace this if using OAuth form
       const resp = await fetch(`https://your-token-exchange.example.com/exchange?code=${code}`);
       const { token } = await resp.json();
       localStorage.setItem('gh_token', token);
@@ -67,7 +68,8 @@ layout: default
     handleOAuthCallback().then(() => {
       const token = localStorage.getItem('gh_token');
       if (!token) {
-        location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${SCOPE}`;
+        // Consider if OAuth flow should be initiated automatically or via a button
+        // location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${SCOPE}`;
       } else {
         setupForms(token);
       }
@@ -82,7 +84,7 @@ layout: default
       const start = document.getElementById('start_date-add').value;
       const freq = document.getElementById('frequency_days-add').value;
       document.getElementById('status').textContent = 'Sending add request…';
-      await octokit.request('POST /repos/{owner}/{repo}/issues', { owner: '<your-username>', repo: '<your-repo>', title: `[Add Plant] ${name}`, labels: ['add-plant'], body: `name: ${name}\nstart_date: ${start}\nfrequency_days: ${freq}` });
+      await octokit.request('POST /repos/{owner}/{repo}/issues', { owner: 'le-cmyk', repo: 'vigilant-telegram', title: `[Add Plant] ${name}`, labels: ['add-plant'], body: `name: ${name}\nstart_date: ${start}\nfrequency_days: ${freq}` });
       document.getElementById('status').textContent = '✅ Add request sent.';
       e.target.reset();
     };
@@ -90,11 +92,40 @@ layout: default
       e.preventDefault();
       const name = document.getElementById('name-remove').value;
       document.getElementById('status').textContent = 'Sending remove request…';
-      await octokit.request('POST /repos/{owner}/{repo}/issues', { owner: '<your-username>', repo: '<your-repo>', title: `[Remove Plant] ${name}`, labels: ['remove-plant'], body: `name: ${name}` });
+      await octokit.request('POST /repos/{owner}/{repo}/issues', { owner: 'le-cmyk', repo: 'vigilant-telegram', title: `[Remove Plant] ${name}`, labels: ['remove-plant'], body: `name: ${name}` });
       document.getElementById('status').textContent = '✅ Remove request sent.';
       e.target.reset();
     };
   }
 
-  initUI();
+  // Check if OAuth is intended before automatically redirecting or setting up forms
+  // For now, let's assume the user might not have OAuth set up, so we don't auto-redirect.
+  // If you have CLIENT_ID and the exchange endpoint, you can uncomment the redirect in initUI.
+  // initUI(); // Call this if you want the OAuth flow to start or forms to be active
+  
+  // Fallback or alternative: If not using OAuth, the forms won't work.
+  // Consider adding a message here if OAuth is not configured.
+  // Or, if OAuth is optional, ensure the page is still useful without it.
+  // For now, the buttons will show, but forms won't submit without a token.
+  // You might want to hide the forms or provide a login button if no token.
+  
+  // If you want to enable the forms without OAuth immediately (e.g. for testing issue creation directly)
+  // you would need a different mechanism or a pre-configured token, which is not secure for client-side.
+  // The current design relies on OAuth for the site forms.
+  // The GitHub Issue forms will work independently.
+
+  // To make the "Add" and "Remove" buttons visible and forms functional *if* a token exists (e.g. from a previous OAuth login):
+  if (localStorage.getItem('gh_token')) {
+    setupForms(localStorage.getItem('gh_token'));
+  } else {
+    // Optionally, guide user to log in or explain that forms are disabled.
+    // For example, disable buttons or show a message:
+    // document.getElementById('status').textContent = "Please log in via GitHub to manage plants from this page.";
+    // Or, if you want to attempt OAuth flow:
+    // initUI();
+  }
+  // Making showAdd/showRemove globally accessible for the buttons
+  window.showAdd = showAdd;
+  window.showRemove = showRemove;
+
 </script>
