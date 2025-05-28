@@ -1,14 +1,24 @@
-# Telegram Time Notifier
+# 🌱 Telegram Watering Plants Notifier
 
-A simple automated service that sends the current time via Telegram using GitHub Actions.
+[![GitHub Actions](https://img.shields.io/github/workflow/status/username/repo/Send%20Time%20Notification)](https://github.com/username/repo/actions)
+[![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)](https://python.org)
 
-## Features
+Un système automatisé de notifications Telegram pour rappeler l'arrosage des plantes, avec journalisation complète des envois.
 
-- 🕐 Sends current time notifications via Telegram
-- ⚡ Automated execution every 10 minutes using GitHub Actions
-- 📅 Daily summary notifications
-- 🔧 Manual trigger support for testing
-- ☁️ Fully cloud-based (no local setup required)
+## 🎯 Fonctionnalités
+
+### ✅ Implémentées (Version 1.1)
+- 🕐 **Notifications automatiques** : Envoi de l'heure actuelle via Telegram
+- 📝 **Journalisation JSON** : Enregistrement de toutes les notifications avec métadonnées complètes
+- 🔄 **Push automatique** : Synchronisation automatique du fichier de log vers GitHub
+- 🧪 **Tests robustes** : Couverture de test complète pour la fiabilité
+- ⚡ **GitHub Actions** : Exécution automatique toutes les 3 heures + notification quotidienne
+
+### 🚀 À venir
+- 🌱 Gestion personnalisée des plantes avec fréquences d'arrosage
+- 💬 Interface de commandes Telegram interactives
+- 🗄️ Base de données pour le suivi des plantes
+- 🧠 Notifications intelligentes basées sur les besoins des plantes
 
 ## Setup
 
@@ -39,14 +49,14 @@ A simple automated service that sends the current time via Telegram using GitHub
 
 The service runs automatically via GitHub Actions:
 
-- **Every 10 minutes**: Sends current time
+- **Every 3 hours**: Sends current time
 - **Daily at 9:00 AM UTC**: Sends a daily summary
 
 ### Manual Testing
 
 1. Go to the **Actions** tab in your repository
 2. Select either workflow:
-   - "Time Notification (Every 10 Minutes)"
+   - "Time Notification (Every 3 Hours)"
    - "Daily Time Notification"
 3. Click **Run workflow** to test manually
 
@@ -73,7 +83,7 @@ python time_notifier.py
 
 ```
 ├── .github/workflows/
-│   ├── time-notification.yml    # Every 10 minutes workflow
+│   ├── time-notification.yml    # Every 3 hours workflow
 │   └── daily-time.yml          # Daily notification workflow
 ├── time_notifier.py            # Main notification script
 ├── test_setup.py              # Configuration test script
@@ -114,9 +124,9 @@ This will check:
 
 ## GitHub Actions Workflows
 
-### Every 10 Minutes Notification
+### Every 3 Hours Notification
 - **File**: `.github/workflows/time-notification.yml`
-- **Schedule**: `*/10 * * * *` (every 10 minutes)
+- **Schedule**: `0 */3 * * *` (every 3 hours)
 - **Manual trigger**: Supported
 
 ### Daily Notification

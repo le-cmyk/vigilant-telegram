@@ -13,6 +13,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -30,3 +33,18 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         python time_notifier.py
+    
+    - name: Configure git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    
+    - name: Commit and push notification log
+      run: |
+        git add notifications_log.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "📝 Auto-update: Daily Telegram notification log $(date '+%Y-%m-%d %H:%M:%S')"
+          git push origin main
+        fi
