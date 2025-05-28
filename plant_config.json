@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_at": "2025-05-28",
+    "description": "Plant watering configuration for automated reminders"
+  },
+  "plants": [
+    {
+      "id": "spider_plant_living_room",
+      "name": "Spider Plant (Living Room)",
+      "type": "Spider Plant",
+      "scientific_name": "Chlorophytum comosum",
+      "location": "Living Room Window",
+      "watering_schedule": {
+        "frequency_days": 7,
+        "season_adjustments": {
+          "spring": 7,
+          "summer": 5,
+          "autumn": 10,
+          "winter": 14
+        }
+      },
+      "care_notes": "Water when top inch of soil is dry. Prefers bright, indirect light.",
+      "emoji": "🕷️🌱",
+      "active": true
+    },
+    {
+      "id": "succulent_office",
+      "name": "Jade Plant (Office)",
+      "type": "Jade Plant",
+      "scientific_name": "Crassula ovata",
+      "location": "Office Desk",
+      "watering_schedule": {
+        "frequency_days": 14,
+        "season_adjustments": {
+          "spring": 10,
+          "summer": 7,
+          "autumn": 14,
+          "winter": 21
+        }
+      },
+      "care_notes": "Water deeply but infrequently. Allow soil to dry completely between waterings.",
+      "emoji": "💎🌿",
+      "active": true
+    },
+    {
+      "id": "snake_plant_bedroom",
+      "name": "Snake Plant (Bedroom)",
+      "type": "Snake Plant",
+      "scientific_name": "Sansevieria trifasciata",
+      "location": "Bedroom Corner",
+      "watering_schedule": {
+        "frequency_days": 21,
+        "season_adjustments": {
+          "spring": 14,
+          "summer": 10,
+          "autumn": 21,
+          "winter": 30
+        }
+      },
+      "care_notes": "Very drought tolerant. Water sparingly and avoid overwatering.",
+      "emoji": "🐍🌿",
+      "active": true
+    },
+    {
+      "id": "pothos_kitchen",
+      "name": "Golden Pothos (Kitchen)",
+      "type": "Golden Pothos",
+      "scientific_name": "Epipremnum aureum",
+      "location": "Kitchen Hanging Basket",
+      "watering_schedule": {
+        "frequency_days": 7,
+        "season_adjustments": {
+          "spring": 5,
+          "summer": 4,
+          "autumn": 7,
+          "winter": 10
+        }
+      },
+      "care_notes": "Keep soil consistently moist but not waterlogged. Loves humidity.",
+      "emoji": "🍃✨",
+      "active": true
+    },
+    {
+      "id": "peace_lily_bathroom",
+      "name": "Peace Lily (Bathroom)",
+      "type": "Peace Lily",
+      "scientific_name": "Spathiphyllum wallisii",
+      "location": "Bathroom Shelf",
+      "watering_schedule": {
+        "frequency_days": 5,
+        "season_adjustments": {
+          "spring": 4,
+          "summer": 3,
+          "autumn": 5,
+          "winter": 7
+        }
+      },
+      "care_notes": "Prefers consistently moist soil. Leaves will droop when thirsty.",
+      "emoji": "☮️🌸",
+      "active": true
+    }
+  ],
+  "notification_settings": {
+    "time_to_send": "09:00",
+    "timezone": "UTC",
+    "reminder_types": [
+      "due_today",
+      "overdue",
+      "upcoming_in_2_days"
+    ],
+    "group_notifications": true,
+    "include_care_tips": true
+  }
+}

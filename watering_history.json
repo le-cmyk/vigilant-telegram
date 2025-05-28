@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_at": "2025-05-28",
+    "description": "Plant watering history and tracking"
+  },
+  "watering_history": [
+    {
+      "plant_id": "spider_plant_living_room",
+      "last_watered": "2025-05-21",
+      "next_due": "2025-05-28",
+      "watering_count": 15
+    },
+    {
+      "plant_id": "succulent_office",
+      "last_watered": "2025-05-14",
+      "next_due": "2025-05-28",
+      "watering_count": 8
+    },
+    {
+      "plant_id": "snake_plant_bedroom",
+      "last_watered": "2025-05-07",
+      "next_due": "2025-05-28",
+      "watering_count": 5
+    },
+    {
+      "plant_id": "pothos_kitchen",
+      "last_watered": "2025-05-21",
+      "next_due": "2025-05-28",
+      "watering_count": 20
+    },
+    {
+      "plant_id": "peace_lily_bathroom",
+      "last_watered": "2025-05-23",
+      "next_due": "2025-05-28",
+      "watering_count": 25
+    }
+  ]
+}
