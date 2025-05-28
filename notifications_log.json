@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "1.0",
-    "last_updated": "2025-05-28T18:46:24.931963",
-    "total_notifications": 1
+    "last_updated": "2025-05-28T20:14:53.824730",
+    "total_notifications": 2
   },
   "notifications": [
     {
@@ -20,6 +20,22 @@
       "telegram_response": {
         "message_id": 20,
         "date": 1748457984,
+        "success": true
+      }
+    },
+    {
+      "id": "e78f8b62-179a-4061-be1e-7e74fb92ba22",
+      "timestamp": "2025-05-28T20:14:53.824695",
+      "date": "2025-05-28",
+      "time": "20:14:53",
+      "day_of_week": "Wednesday",
+      "message": "🕐 **Current Time**\n\n📅 Wednesday\n⏰ 2025-05-28 20:14:53",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "telegram_response": {
+        "message_id": 21,
+        "date": 1748463293,
         "success": true
       }
     }
