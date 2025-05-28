@@ -1,6 +1,3 @@
-# Logs de notifications réelles (mais pas l'exemple)
-notifications_log.json
-
 # Environnements Python
 __pycache__/
 *.py[cod]
