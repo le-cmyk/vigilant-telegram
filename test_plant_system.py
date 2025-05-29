@@ -47,7 +47,7 @@ def test_plant_system():
     message = notifier._format_plant_reminder_message(due_today, overdue, upcoming)
     print(f"\\n📱 Sample notification message:")
     print("-" * 40)
-    print(message.replace("\\n", "\\n"))
+    print(message) # Removed .replace("\\\\n", "\\\\n")
     print("-" * 40)
     
     # Test season detection
