@@ -29,11 +29,9 @@ def test_plant_system():
         name = plant.get("name", "Unknown")
         location = plant.get("location", "Unknown")
         print(f"   {emoji} {name} ({location})")
-    
-    # Test loading watering history
-    history = notifier._load_watering_history()
-    history_entries = history.get("watering_history", [])
-    print(f"✅ Loaded {len(history_entries)} watering history entries")
+      # Test loading watering history from logs
+    history = notifier._load_watering_history_from_logs()
+    print(f"✅ Loaded watering history for {len(history)} plants: {list(history.keys())}")
     
     # Test getting plants needing water
     due_today, overdue, upcoming = notifier._get_plants_needing_water()

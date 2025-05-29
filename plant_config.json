@@ -100,8 +100,7 @@
       "emoji": "☮️🌸",
       "active": true
     }
-  ],
-  "notification_settings": {
+  ],  "notification_settings": {
     "time_to_send": "09:00",
     "timezone": "UTC",
     "reminder_types": [
@@ -110,6 +109,7 @@
       "upcoming_in_2_days"
     ],
     "group_notifications": true,
-    "include_care_tips": true
+    "include_care_tips": true,
+    "assume_watering_on_notification": true
   }
 }

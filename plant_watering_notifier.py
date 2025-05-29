@@ -17,7 +17,6 @@ from pathlib import Path
 class PlantWateringNotifier:
     def __init__(self, bot_token: str, chat_id: str, 
                  config_file: str = "plant_config.json",
-                 history_file: str = "watering_history.json",
                  log_file: str = "notifications_log.json"):
         """
         Initialize the Plant Watering Notifier.
@@ -26,14 +25,12 @@ class PlantWateringNotifier:
             bot_token (str): Your Telegram bot token
             chat_id (str): Your Telegram chat ID
             config_file (str): Path to the plant configuration JSON file
-            history_file (str): Path to the watering history JSON file
             log_file (str): Path to the notifications log JSON file
         """
         self.bot_token = bot_token
         self.chat_id = chat_id
         self.base_url = f"https://api.telegram.org/bot{bot_token}"
         self.config_file = Path(config_file)
-        self.history_file = Path(history_file)
         self.log_file = Path(log_file)
         self._ensure_files_exist()
     
@@ -43,10 +40,12 @@ class PlantWateringNotifier:
             initial_log_data = {
                 "metadata": {
                     "created_at": datetime.datetime.now().isoformat(),
-                    "project": "Plant Watering Reminder System",
-                    "version": "2.0"
+                    "project": "Watering Plants Telegram Notifier",
+                    "version": "2.0",
+                    "total_watering_events": 0,
+                    "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
                 },
-                "notifications": []
+                "watering_events": []
             }
             with open(self.log_file, 'w', encoding='utf-8') as f:
                 json.dump(initial_log_data, f, indent=2, ensure_ascii=False)
@@ -75,25 +74,35 @@ class PlantWateringNotifier:
             print(f"❌ Error parsing plant config: {e}")
             return {"plants": [], "notification_settings": {}}
     
-    def _load_watering_history(self) -> Dict[str, Any]:
-        """Load watering history from JSON file."""
+    def _load_watering_history_from_logs(self) -> Dict[str, str]:
+        """
+        Load the last watering dates from notification logs.
+        Returns a dictionary mapping plant_id to last_watered_date.
+        """
         try:
-            with open(self.history_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
+            with open(self.log_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            last_watered = {}
+            
+            # Go through watering events and find the most recent watering for each plant
+            for event in data.get("watering_events", []):
+                if event.get("status") == "success" and event.get("plants_watered"):
+                    for plant in event["plants_watered"]:
+                        plant_id = plant.get("plant_id")
+                        watered_date = plant.get("watered_date")
+                        if plant_id and watered_date:
+                            # Keep the most recent date for each plant
+                            if plant_id not in last_watered or watered_date > last_watered[plant_id]:
+                                last_watered[plant_id] = watered_date
+            
+            return last_watered
         except FileNotFoundError:
-            print(f"❌ Watering history file not found: {self.history_file}")
-            return {"watering_history": []}
+            print(f"❌ Notification log file not found: {self.log_file}")
+            return {}
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing watering history: {e}")
-            return {"watering_history": []}
-    
-    def _save_watering_history(self, history_data: Dict[str, Any]) -> None:
-        """Save watering history to JSON file."""
-        try:
-            with open(self.history_file, 'w', encoding='utf-8') as f:
-                json.dump(history_data, f, indent=2, ensure_ascii=False)
-        except Exception as e:
-            print(f"❌ Error saving watering history: {e}")
+            print(f"❌ Error parsing notification log: {e}")
+            return {}
     
     def _calculate_next_watering_date(self, plant: Dict[str, Any], last_watered: str) -> datetime.date:
         """Calculate the next watering date for a plant based on its schedule and season."""
@@ -110,35 +119,28 @@ class PlantWateringNotifier:
     def _get_plants_needing_water(self) -> Tuple[List[Dict], List[Dict], List[Dict]]:
         """
         Get plants that need watering today, are overdue, or are due soon.
+        Based on notifications log instead of separate watering history.
         
         Returns:
             Tuple of (due_today, overdue, upcoming_in_2_days)
         """
         config = self._load_plant_config()
-        history = self._load_watering_history()
+        last_watered_dates = self._load_watering_history_from_logs()
         
         due_today = []
         overdue = []
         upcoming_in_2_days = []
         today = datetime.date.today()
         
-        # Create a lookup for watering history
-        history_lookup = {item["plant_id"]: item for item in history.get("watering_history", [])}
-        
         for plant in config.get("plants", []):
             if not plant.get("active", True):
                 continue
                 
             plant_id = plant["id"]
-            plant_history = history_lookup.get(plant_id)
+            last_watered = last_watered_dates.get(plant_id)
             
-            if not plant_history:
-                # If no history, assume it needs watering today
-                due_today.append(plant)
-                continue
-            
-            last_watered = plant_history.get("last_watered")
             if not last_watered:
+                # If no watering history, assume it needs watering today
                 due_today.append(plant)
                 continue
             
@@ -157,9 +159,9 @@ class PlantWateringNotifier:
     def _format_plant_reminder_message(self, due_today: List[Dict], overdue: List[Dict], upcoming: List[Dict]) -> str:
         """Format the plant watering reminder message."""
         if not due_today and not overdue and not upcoming:
-            return "🌱 **Plant Care Update**\n\nAll your plants are happy and well-watered! 🎉\n\nNext check: Tomorrow"
+            return "🌱 **Plant Care Update**\\n\\nAll your plants are happy and well-watered! 🎉\\n\\nNext check: Tomorrow"
         
-        message_parts = ["🌱 **Plant Watering Reminders**\n"]
+        message_parts = ["🌱 **Plant Watering Reminders**\\n"]
         
         if overdue:
             message_parts.append("🚨 **URGENT - Overdue:**")
@@ -171,7 +173,7 @@ class PlantWateringNotifier:
             message_parts.append("")
         
         if due_today:
-            message_parts.append("\n📅 **Due Today:**")
+            message_parts.append("\\n📅 **Due Today:**")
             for plant in due_today:
                 emoji = plant.get("emoji", "🌿")
                 message_parts.append(f"{emoji} *{plant['name']}* ({plant['location']})")
@@ -180,7 +182,7 @@ class PlantWateringNotifier:
             message_parts.append("")
         
         if upcoming:
-            message_parts.append("\n⏰ **Coming Up (Next 2 Days):**")
+            message_parts.append("\\n⏰ **Coming Up (Next 2 Days):**")
             for plant in upcoming:
                 emoji = plant.get("emoji", "🌿")
                 message_parts.append(f"{emoji} *{plant['name']}* ({plant['location']})")
@@ -189,7 +191,7 @@ class PlantWateringNotifier:
         # Add current season info
         current_season = self._get_current_season()
         season_emoji = {"spring": "🌸", "summer": "☀️", "autumn": "🍂", "winter": "❄️"}
-        message_parts.append(f"\n🌍 Current Season: {season_emoji.get(current_season, '🌿')} {current_season.title()}")
+        message_parts.append(f"\\n🌍 Current Season: {season_emoji.get(current_season, '🌿')} {current_season.title()}")
         
         # Add care tip
         tips = [
@@ -197,22 +199,15 @@ class PlantWateringNotifier:
             "☀️ Check soil moisture before watering",
             "🌡️ Room temperature water is best",
             "💚 Happy plants = happy home!",
-            "🍃 Don\'t forget to check the drainage"
+            "🍃 Don't forget to check the drainage"
         ]
-        message_parts.append(f"\n💡 Tip: {random.choice(tips)}")
+        message_parts.append(f"\\n💡 **Tip of the day:** {random.choice(tips)}")
         
-        return "\n".join(message_parts)
+        return "\\n".join(message_parts)
     
-    def send_notification(self, message: str) -> None:
-        """Send a notification message via Telegram."""
-        status = None
-        plants_data = None
-        response_data = None
-        error = None
-        if not self.bot_token or not self.chat_id:
-            print("⚠️ Telegram credentials not set. Skipping notification.")
-            return
-        
+    def _log_watering_notification(self, message: str, status: str, plants_watered: List[Dict], 
+                                  response_data: Optional[Dict] = None, error: Optional[str] = None) -> None:
+        """Log a watering notification to the JSON file."""
         try:
             # Read existing data
             with open(self.log_file, 'r', encoding='utf-8') as f:
@@ -226,15 +221,13 @@ class PlantWateringNotifier:
                 "time": datetime.datetime.now().strftime("%H:%M:%S"),
                 "day_of_week": datetime.datetime.now().strftime("%A"),
                 "season": self._get_current_season(),
+                "notification_type": "watering_reminder",
                 "message": message,
                 "status": status,
                 "chat_id": self.chat_id,
-                "bot_token_last_4": self.bot_token[-4:] if len(self.bot_token) > 4 else "****"
+                "bot_token_last_4": self.bot_token[-4:] if len(self.bot_token) > 4 else "****",
+                "plants_watered": plants_watered
             }
-            
-            # Add plant-specific data
-            if plants_data:
-                notification_entry["plants_summary"] = plants_data
             
             # Add response data if available
             if response_data:
@@ -248,25 +241,26 @@ class PlantWateringNotifier:
             if error:
                 notification_entry["error"] = error
             
-            # Append to notifications
-            data["notifications"].append(notification_entry)
+            # Append to watering events
+            data["watering_events"].append(notification_entry)
             
             # Update metadata
             data["metadata"]["last_updated"] = datetime.datetime.now().isoformat()
-            data["metadata"]["total_notifications"] = len(data["notifications"])
+            data["metadata"]["total_watering_events"] = len(data["watering_events"])
             
             # Write back to file
             with open(self.log_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
                 
-            print(f"📝 Notification logged to {self.log_file}")
+            print(f"📝 Watering notification logged to {self.log_file}")
             
         except Exception as e:
-            print(f"⚠️ Failed to log notification: {e}")
+            print(f"⚠️ Failed to log watering notification: {e}")
     
     def send_watering_reminder(self) -> bool:
         """
         Send plant watering reminders to Telegram and log the notification.
+        Assumes watering is completed when notification is sent.
         
         Returns:
             bool: True if message was sent successfully, False otherwise
@@ -274,15 +268,26 @@ class PlantWateringNotifier:
         try:
             due_today, overdue, upcoming = self._get_plants_needing_water()
             
-            # Prepare plants summary for logging
-            plants_summary = {
-                "due_today_count": len(due_today),
-                "overdue_count": len(overdue),
-                "upcoming_count": len(upcoming),
-                "due_today": [p["name"] for p in due_today],
-                "overdue": [p["name"] for p in overdue],
-                "upcoming": [p["name"] for p in upcoming]
-            }
+            # Prepare plants that will be "watered" when notification is sent
+            plants_to_water = []
+            today_str = datetime.date.today().strftime("%Y-%m-%d")
+            
+            # All overdue and due today plants will be considered watered
+            for plant in overdue:
+                plants_to_water.append({
+                    "plant_id": plant["id"],
+                    "name": plant["name"],
+                    "watered_date": today_str,
+                    "was_overdue": True
+                })
+            
+            for plant in due_today:
+                plants_to_water.append({
+                    "plant_id": plant["id"],
+                    "name": plant["name"],
+                    "watered_date": today_str,
+                    "was_overdue": False
+                })
             
             message = self._format_plant_reminder_message(due_today, overdue, upcoming)
             
@@ -296,24 +301,26 @@ class PlantWateringNotifier:
             response = requests.post(url, json=payload, timeout=10)
             
             if response.status_code == 200:
-                total_plants = len(due_today) + len(overdue) + len(upcoming)
-                print(f"✅ Plant watering reminder sent successfully! ({total_plants} plants need attention)")
-                # Log successful notification
-                self._log_notification(
+                total_plants = len(due_today) + len(overdue)
+                print(f"✅ Plant watering reminder sent successfully! ({total_plants} plants watered)")
+                
+                # Log successful notification with plants watered
+                self._log_watering_notification(
                     message=message,
                     status="success",
-                    plants_data=plants_summary,
+                    plants_watered=plants_to_water,
                     response_data=response.json()
                 )
                 return True
             else:
                 error_msg = f"Status code: {response.status_code}, Response: {response.text}"
                 print(f"❌ Failed to send message. {error_msg}")
+                
                 # Log failed notification
-                self._log_notification(
+                self._log_watering_notification(
                     message=message,
                     status="error",
-                    plants_data=plants_summary,
+                    plants_watered=[],
                     error=error_msg
                 )
                 return False
@@ -321,20 +328,24 @@ class PlantWateringNotifier:
         except requests.exceptions.RequestException as e:
             error_msg = f"Network error: {e}"
             print(f"❌ {error_msg}")
+            
             # Log network error
-            self._log_notification(
+            self._log_watering_notification(
                 message="Failed to send plant reminder due to network error",
                 status="error",
+                plants_watered=[],
                 error=error_msg
             )
             return False
         except Exception as e:
             error_msg = f"Unexpected error: {e}"
             print(f"❌ {error_msg}")
+            
             # Log unexpected error
-            self._log_notification(
+            self._log_watering_notification(
                 message="Failed to send plant reminder due to unexpected error",
                 status="error",
+                plants_watered=[],
                 error=error_msg
             )
             return False
@@ -377,7 +388,7 @@ def load_config() -> tuple[Optional[str], Optional[str]]:
 
 def main():
     """Send plant watering reminders and exit."""
-    print("🌱 Plant Watering Reminder System")
+    print("🌱 Plant Watering Reminder System v2.0")
     print("=" * 40)
     
     bot_token, chat_id = load_config()
@@ -398,6 +409,7 @@ def main():
     success = notifier.send_watering_reminder()
     if success:
         print("🎉 Plant watering reminders sent successfully via GitHub Actions! 🌿")
+        print("💧 Watering assumed completed for all notified plants.")
     else:
         print("❌ Failed to send plant watering reminders.")
 

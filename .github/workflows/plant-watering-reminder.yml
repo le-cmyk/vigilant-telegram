@@ -43,7 +43,7 @@ jobs:
     
     - name: Commit and push notification log
       run: |
-        git add notifications_log.json watering_history.json
+        git add notifications_log.json
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else

@@ -25,10 +25,10 @@ The system comes pre-configured with 5 popular houseplants:
 ## 📁 Configuration Files
 
 ### `plant_config.json`
-Contains plant definitions, care schedules, and settings
+Contains plant definitions, care schedules, and notification settings
 
-### `watering_history.json` 
-Tracks when each plant was last watered
+### `notifications_log.json` 
+Tracks watering events based on sent notifications and assumes watering completion
 
 ## 🤖 GitHub Actions Workflow
 
@@ -60,7 +60,7 @@ You can also trigger it manually from the GitHub Actions tab.
 
 5. **Customize your plants**:
    - Edit `plant_config.json` to match your actual plants
-   - Update `watering_history.json` with last watering dates
+   - The system will automatically start tracking from the first notification
 
 6. **Enable GitHub Actions**:
    - Go to the Actions tab in your repository
@@ -107,7 +107,7 @@ To add a new plant, edit `plant_config.json` and add a new plant object with:
 - Fun `emoji` for visual appeal
 - Set `active: true`
 
-Then add a corresponding entry to `watering_history.json` with the last watering date.
+The system will automatically track watering from the first notification sent.
 
 ## 🔄 Seasonal Adjustments
 
@@ -122,8 +122,20 @@ The system automatically adjusts watering schedules based on seasons:
 All notifications are logged to `notifications_log.json` with:
 - Timestamp and plant status summary
 - Message content and delivery status
-- Seasonal information
+- **Automatic watering tracking**: Plants are considered watered when notifications are sent
+- Seasonal information and watering assumptions
 - Error tracking
+
+## 🚰 How the Watering System Works
+
+**Version 2.0 introduces a streamlined approach:**
+
+1. **Notification = Watering**: When a reminder is sent, the system assumes you water the plants
+2. **Single Source of Truth**: All watering history is derived from `notifications_log.json`
+3. **No Manual Updates**: No need to manually track when you water plants
+4. **Intelligent Scheduling**: Next watering dates calculated based on previous notifications
+
+This eliminates the need for manual watering history maintenance while providing automatic, accurate tracking.
 
 ## 🛠️ Technical Details
 
