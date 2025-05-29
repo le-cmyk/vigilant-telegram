@@ -435,12 +435,10 @@
                 } catch (error) {
                     this.showError('Failed to load plant data: ' + error.message);
                 }
-            }
-
-            async loadData() {
+            }            async loadData() {
                 const [configResponse, logResponse] = await Promise.all([
                     fetch('plant_config.json'),
-                    fetch('notifications_log.json')
+                    fetch('notifications_log.json?' + new Date().getTime())
                 ]);
 
                 if (!configResponse.ok) {
