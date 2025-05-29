@@ -159,9 +159,9 @@ class PlantWateringNotifier:
     def _format_plant_reminder_message(self, due_today: List[Dict], overdue: List[Dict], upcoming: List[Dict]) -> str:
         """Format the plant watering reminder message."""
         if not due_today and not overdue and not upcoming:
-            return "🌱 **Plant Care Update**\\n\\nAll your plants are happy and well-watered! 🎉\\n\\nNext check: Tomorrow"
+            return "🌱 **Plant Care Update**\n\nAll your plants are happy and well-watered! 🎉\n\nNext check: Tomorrow"
         
-        message_parts = ["🌱 **Plant Watering Reminders**\\n"]
+        message_parts = ["🌱 **Plant Watering Reminders**\n"]
         
         if overdue:
             message_parts.append("🚨 **URGENT - Overdue:**")
@@ -171,9 +171,8 @@ class PlantWateringNotifier:
                 if plant.get("care_notes"):
                     message_parts.append(f"   💡 {plant['care_notes']}")
             message_parts.append("")
-        
         if due_today:
-            message_parts.append("\\n📅 **Due Today:**")
+            message_parts.append("\n📅 **Due Today:**")
             for plant in due_today:
                 emoji = plant.get("emoji", "🌿")
                 message_parts.append(f"{emoji} *{plant['name']}* ({plant['location']})")
@@ -182,16 +181,15 @@ class PlantWateringNotifier:
             message_parts.append("")
         
         if upcoming:
-            message_parts.append("\\n⏰ **Coming Up (Next 2 Days):**")
+            message_parts.append("\n⏰ **Coming Up (Next 2 Days):**")
             for plant in upcoming:
                 emoji = plant.get("emoji", "🌿")
                 message_parts.append(f"{emoji} *{plant['name']}* ({plant['location']})")
             message_parts.append("")
-        
-        # Add current season info
+          # Add current season info
         current_season = self._get_current_season()
         season_emoji = {"spring": "🌸", "summer": "☀️", "autumn": "🍂", "winter": "❄️"}
-        message_parts.append(f"\\n🌍 Current Season: {season_emoji.get(current_season, '🌿')} {current_season.title()}")
+        message_parts.append(f"\n🌍 Current Season: {season_emoji.get(current_season, '🌿')} {current_season.title()}")
         
         # Add care tip
         tips = [
@@ -201,9 +199,9 @@ class PlantWateringNotifier:
             "💚 Happy plants = happy home!",
             "🍃 Don't forget to check the drainage"
         ]
-        message_parts.append(f"\\n💡 **Tip of the day:** {random.choice(tips)}")
+        message_parts.append(f"\n💡 **Tip of the day:** {random.choice(tips)}")
         
-        return "\\n".join(message_parts)
+        return "\n".join(message_parts)
     
     def _log_watering_notification(self, message: str, status: str, plants_watered: List[Dict], 
                                   response_data: Optional[Dict] = None, error: Optional[str] = None) -> None:
