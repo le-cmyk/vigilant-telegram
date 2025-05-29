@@ -171,7 +171,7 @@ class PlantWateringNotifier:
             message_parts.append("")
         
         if due_today:
-            message_parts.append("📅 **Due Today:**")
+            message_parts.append("\\n📅 **Due Today:**")
             for plant in due_today:
                 emoji = plant.get("emoji", "🌿")
                 message_parts.append(f"{emoji} *{plant['name']}* ({plant['location']})")
@@ -180,7 +180,7 @@ class PlantWateringNotifier:
             message_parts.append("")
         
         if upcoming:
-            message_parts.append("⏰ **Coming Up (Next 2 Days):**")
+            message_parts.append("\\n⏰ **Coming Up (Next 2 Days):**")
             for plant in upcoming:
                 emoji = plant.get("emoji", "🌿")
                 message_parts.append(f"{emoji} *{plant['name']}* ({plant['location']})")
@@ -189,7 +189,7 @@ class PlantWateringNotifier:
         # Add current season info
         current_season = self._get_current_season()
         season_emoji = {"spring": "🌸", "summer": "☀️", "autumn": "🍂", "winter": "❄️"}
-        message_parts.append(f"🌍 Current Season: {season_emoji.get(current_season, '🌿')} {current_season.title()}")
+        message_parts.append(f"\\n🌍 Current Season: {season_emoji.get(current_season, '🌿')} {current_season.title()}")
         
         # Add care tip
         tips = [
@@ -197,15 +197,22 @@ class PlantWateringNotifier:
             "☀️ Check soil moisture before watering",
             "🌡️ Room temperature water is best",
             "💚 Happy plants = happy home!",
-            "🍃 Don't forget to check the drainage"
+            "🍃 Don\'t forget to check the drainage"
         ]
-        message_parts.append(f"\\n💡 **Tip of the day:** {random.choice(tips)}")
+        message_parts.append(f"\\n💡 Tip: {random.choice(tips)}")
         
         return "\\n".join(message_parts)
     
-    def _log_notification(self, message: str, status: str, plants_data: Dict[str, Any] = None, 
-                         response_data: Optional[Dict[Any, Any]] = None, error: Optional[str] = None) -> None:
-        """Log notification details to JSON file."""
+    def send_notification(self, message: str) -> None:
+        """Send a notification message via Telegram."""
+        status = None
+        plants_data = None
+        response_data = None
+        error = None
+        if not self.bot_token or not self.chat_id:
+            print("⚠️ Telegram credentials not set. Skipping notification.")
+            return
+        
         try:
             # Read existing data
             with open(self.log_file, 'r', encoding='utf-8') as f:
