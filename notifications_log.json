@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-05-31T18:29:54.902258",
-    "total_watering_events": 11,
+    "last_updated": "2025-06-01T09:23:10.766290",
+    "total_watering_events": 12,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -245,6 +245,38 @@
       "telegram_response": {
         "message_id": 36,
         "date": 1748716194,
+        "success": true
+      }
+    },
+    {
+      "id": "cf89dc98-9158-4af0-a0e5-4b6acb9da662",
+      "timestamp": "2025-06-01T09:23:10.766265",
+      "date": "2025-06-01",
+      "time": "09:23:10",
+      "day_of_week": "Sunday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n🚨 **URGENT - Overdue:**\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n   💡 Prefers consistently moist soil. Leaves will droop when thirsty.\n\n\n📅 **Due Today:**\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n   💡 Keep soil consistently moist but not waterlogged. Loves humidity.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🕷️🌱 *Spider Plant (Living Room)* (Living Room Window)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 🌡️ Room temperature water is best",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "peace_lily_bathroom",
+          "name": "Peace Lily (Bathroom)",
+          "watered_date": "2025-06-01",
+          "was_overdue": true
+        },
+        {
+          "plant_id": "pothos_kitchen",
+          "name": "Golden Pothos (Kitchen)",
+          "watered_date": "2025-06-01",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 37,
+        "date": 1748769790,
         "success": true
       }
     }
