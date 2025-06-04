@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-03T18:33:54.481248",
-    "total_watering_events": 17,
+    "last_updated": "2025-06-04T09:25:53.338214",
+    "total_watering_events": 18,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -379,6 +379,38 @@
       "telegram_response": {
         "message_id": 42,
         "date": 1748975634,
+        "success": true
+      }
+    },
+    {
+      "id": "8c0fb3ba-59ac-485e-9777-ec3f10534177",
+      "timestamp": "2025-06-04T09:25:53.338176",
+      "date": "2025-06-04",
+      "time": "09:25:53",
+      "day_of_week": "Wednesday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n💎🌿 *Jade Plant (Office)* (Office Desk)\n   💡 Water deeply but infrequently. Allow soil to dry completely between waterings.\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n   💡 Prefers consistently moist soil. Leaves will droop when thirsty.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 🍃 Don't forget to check the drainage",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "succulent_office",
+          "name": "Jade Plant (Office)",
+          "watered_date": "2025-06-04",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "peace_lily_bathroom",
+          "name": "Peace Lily (Bathroom)",
+          "watered_date": "2025-06-04",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 43,
+        "date": 1749029153,
         "success": true
       }
     }
