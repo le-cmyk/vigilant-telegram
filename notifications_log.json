@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-06T09:25:51.685272",
-    "total_watering_events": 21,
+    "last_updated": "2025-06-06T18:33:06.790886",
+    "total_watering_events": 22,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -475,6 +475,25 @@
       "telegram_response": {
         "message_id": 46,
         "date": 1749201951,
+        "success": true
+      }
+    },
+    {
+      "id": "0904d069-6c0f-4d6a-b69a-6d807908537a",
+      "timestamp": "2025-06-06T18:33:06.790856",
+      "date": "2025-06-06",
+      "time": "18:33:06",
+      "day_of_week": "Friday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🕷️🌱 *Spider Plant (Living Room)* (Living Room Window)\n🐍🌿 *Snake Plant (Bedroom)* (Bedroom Corner)\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 💚 Happy plants = happy home!",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 47,
+        "date": 1749234786,
         "success": true
       }
     }
