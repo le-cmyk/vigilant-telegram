@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-08T09:22:48.862297",
-    "total_watering_events": 25,
+    "last_updated": "2025-06-08T18:29:31.785785",
+    "total_watering_events": 26,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -570,6 +570,25 @@
       "telegram_response": {
         "message_id": 50,
         "date": 1749374568,
+        "success": true
+      }
+    },
+    {
+      "id": "f15ab86c-97eb-49ce-95a3-b5e236551074",
+      "timestamp": "2025-06-08T18:29:31.785753",
+      "date": "2025-06-08",
+      "time": "18:29:31",
+      "day_of_week": "Sunday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 🍃 Don't forget to check the drainage",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 51,
+        "date": 1749407371,
         "success": true
       }
     }
