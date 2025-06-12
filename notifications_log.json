@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-11T18:34:08.790255",
-    "total_watering_events": 32,
+    "last_updated": "2025-06-12T09:25:55.623675",
+    "total_watering_events": 33,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -724,6 +724,32 @@
       "telegram_response": {
         "message_id": 57,
         "date": 1749666848,
+        "success": true
+      }
+    },
+    {
+      "id": "419d0b4a-d7c5-4c4f-a286-561b412726f0",
+      "timestamp": "2025-06-12T09:25:55.623637",
+      "date": "2025-06-12",
+      "time": "09:25:55",
+      "day_of_week": "Thursday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🕷️🌱 *Spider Plant (Living Room)* (Living Room Window)\n   💡 Water when top inch of soil is dry. Prefers bright, indirect light.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 💧 Water in the morning for best absorption",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "spider_plant_living_room",
+          "name": "Spider Plant (Living Room)",
+          "watered_date": "2025-06-12",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 58,
+        "date": 1749720355,
         "success": true
       }
     }
