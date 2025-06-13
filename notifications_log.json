@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-12T18:32:37.608327",
-    "total_watering_events": 34,
+    "last_updated": "2025-06-13T09:25:53.878981",
+    "total_watering_events": 35,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -769,6 +769,38 @@
       "telegram_response": {
         "message_id": 59,
         "date": 1749753157,
+        "success": true
+      }
+    },
+    {
+      "id": "b8ceb244-3a21-4a10-9660-80384b4f6b33",
+      "timestamp": "2025-06-13T09:25:53.878940",
+      "date": "2025-06-13",
+      "time": "09:25:53",
+      "day_of_week": "Friday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n   💡 Keep soil consistently moist but not waterlogged. Loves humidity.\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n   💡 Prefers consistently moist soil. Leaves will droop when thirsty.\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** ☀️ Check soil moisture before watering",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pothos_kitchen",
+          "name": "Golden Pothos (Kitchen)",
+          "watered_date": "2025-06-13",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "peace_lily_bathroom",
+          "name": "Peace Lily (Bathroom)",
+          "watered_date": "2025-06-13",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 60,
+        "date": 1749806753,
         "success": true
       }
     }
