@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-16T09:27:48.161187",
-    "total_watering_events": 41,
+    "last_updated": "2025-06-16T18:33:56.941223",
+    "total_watering_events": 42,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -922,6 +922,25 @@
       "telegram_response": {
         "message_id": 66,
         "date": 1750066068,
+        "success": true
+      }
+    },
+    {
+      "id": "5a1f001d-a276-4bef-b673-be7e590b0713",
+      "timestamp": "2025-06-16T18:33:56.941188",
+      "date": "2025-06-16",
+      "time": "18:33:56",
+      "day_of_week": "Monday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🕷️🌱 *Spider Plant (Living Room)* (Living Room Window)\n💎🌿 *Jade Plant (Office)* (Office Desk)\n🐍🌿 *Snake Plant (Bedroom)* (Bedroom Corner)\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** ☀️ Check soil moisture before watering",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 67,
+        "date": 1750098836,
         "success": true
       }
     }
