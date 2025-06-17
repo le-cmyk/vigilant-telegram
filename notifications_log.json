@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-16T18:33:56.941223",
-    "total_watering_events": 42,
+    "last_updated": "2025-06-17T09:26:43.940649",
+    "total_watering_events": 43,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -941,6 +941,44 @@
       "telegram_response": {
         "message_id": 67,
         "date": 1750098836,
+        "success": true
+      }
+    },
+    {
+      "id": "2c94bd79-1ae4-49c6-a25c-d7e84c2b70e2",
+      "timestamp": "2025-06-17T09:26:43.940616",
+      "date": "2025-06-17",
+      "time": "09:26:43",
+      "day_of_week": "Tuesday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🕷️🌱 *Spider Plant (Living Room)* (Living Room Window)\n   💡 Water when top inch of soil is dry. Prefers bright, indirect light.\n🐍🌿 *Snake Plant (Bedroom)* (Bedroom Corner)\n   💡 Very drought tolerant. Water sparingly and avoid overwatering.\n🍃✨ *Golden Pothos (Kitchen)* (Kitchen Hanging Basket)\n   💡 Keep soil consistently moist but not waterlogged. Loves humidity.\n\n\n⏰ **Coming Up (Next 2 Days):**\n💎🌿 *Jade Plant (Office)* (Office Desk)\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 🍃 Don't forget to check the drainage",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "spider_plant_living_room",
+          "name": "Spider Plant (Living Room)",
+          "watered_date": "2025-06-17",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "snake_plant_bedroom",
+          "name": "Snake Plant (Bedroom)",
+          "watered_date": "2025-06-17",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "pothos_kitchen",
+          "name": "Golden Pothos (Kitchen)",
+          "watered_date": "2025-06-17",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 68,
+        "date": 1750152403,
         "success": true
       }
     }
