@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-17T18:34:01.987338",
-    "total_watering_events": 44,
+    "last_updated": "2025-06-18T09:26:40.957411",
+    "total_watering_events": 45,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -998,6 +998,32 @@
       "telegram_response": {
         "message_id": 69,
         "date": 1750185241,
+        "success": true
+      }
+    },
+    {
+      "id": "25947a4b-b6eb-4072-ba43-2e0878461428",
+      "timestamp": "2025-06-18T09:26:40.957373",
+      "date": "2025-06-18",
+      "time": "09:26:40",
+      "day_of_week": "Wednesday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n💎🌿 *Jade Plant (Office)* (Office Desk)\n   💡 Water deeply but infrequently. Allow soil to dry completely between waterings.\n\n\n⏰ **Coming Up (Next 2 Days):**\n☮️🌸 *Peace Lily (Bathroom)* (Bathroom Shelf)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 🍃 Don't forget to check the drainage",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "succulent_office",
+          "name": "Jade Plant (Office)",
+          "watered_date": "2025-06-18",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 70,
+        "date": 1750238800,
         "success": true
       }
     }
