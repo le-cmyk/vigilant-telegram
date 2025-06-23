@@ -6,11 +6,30 @@
   },
   "plants": [
     {
-      "id": "spider_plant_living_room",
-      "name": "Spider Plant (Living Room)",
-      "type": "Spider Plant",
-      "scientific_name": "Chlorophytum comosum",
-      "location": "Living Room Window",
+      "id": "pelargonium_peltatum_balcony",
+      "name": "Ivy Geranium (Balcony)",
+      "type": "Ivy Geranium",
+      "scientific_name": "Pelargonium peltatum",
+      "location": "Outdoor balcony with full sun to partial shade",
+      "watering_schedule": {
+        "frequency_days": 7,
+        "season_adjustments": {
+          "spring": 6,
+          "summer": 4,
+          "autumn": 8,
+          "winter": 12
+        }
+      },
+      "care_notes": "Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.",
+      "emoji": "🌸",
+      "active": true
+    },
+    {
+      "id": "calathea_makoyana_indoor",
+      "name": "Peacock Plant (Indoor)",
+      "type": "Peacock Plant",
+      "scientific_name": "Calathea makoyana",
+      "location": "Bright, indirect light indoors with high humidity",
       "watering_schedule": {
         "frequency_days": 7,
         "season_adjustments": {
@@ -20,84 +39,84 @@
           "winter": 14
         }
       },
-      "care_notes": "Water when top inch of soil is dry. Prefers bright, indirect light.",
-      "emoji": "🕷️🌱",
+      "care_notes": "Keep soil evenly moist but not waterlogged; use filtered or rainwater to prevent leaf tip browning; maintain humidity above 60%; avoid direct sun; dust leaves regularly to promote healthy photosynthesis.",
+      "emoji": "🌿",
       "active": true
     },
     {
-      "id": "succulent_office",
-      "name": "Jade Plant (Office)",
-      "type": "Jade Plant",
-      "scientific_name": "Crassula ovata",
-      "location": "Office Desk",
+      "id": "dracaena_marginata_indoor",
+      "name": "Dragon Tree (Indoor Corner)",
+      "type": "Dragon Tree",
+      "scientific_name": "Dracaena marginata",
+      "location": "Bright, indirect light indoors; avoid drafts",
+      "watering_schedule": {
+        "frequency_days": 10,
+        "season_adjustments": {
+          "spring": 8,
+          "summer": 6,
+          "autumn": 12,
+          "winter": 18
+        }
+      },
+      "care_notes": "Use well-draining soil; allow top 2–3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.",
+      "emoji": "🌴",
+      "active": true
+    },
+    {
+      "id": "kalanchoe_blossfeldiana_indoor",
+      "name": "Flaming Katy (Indoor Window)",
+      "type": "Kalanchoe",
+      "scientific_name": "Kalanchoe blossfeldiana",
+      "location": "Bright, indirect light indoors near a window",
       "watering_schedule": {
         "frequency_days": 14,
         "season_adjustments": {
-          "spring": 10,
-          "summer": 7,
-          "autumn": 14,
+          "spring": 12,
+          "summer": 10,
+          "autumn": 16,
           "winter": 21
         }
       },
-      "care_notes": "Water deeply but infrequently. Allow soil to dry completely between waterings.",
-      "emoji": "💎🌿",
+      "care_notes": "Use a well-draining succulent mix; allow the top 2–3 cm of soil to dry out between waterings; provide bright light or filtered sun; remove spent blooms to encourage new flowering; feed monthly with diluted balanced fertilizer; keep temperatures between 15–24 °C.",
+      "emoji": "🌵",
       "active": true
     },
     {
-      "id": "snake_plant_bedroom",
-      "name": "Snake Plant (Bedroom)",
-      "type": "Snake Plant",
-      "scientific_name": "Sansevieria trifasciata",
-      "location": "Bedroom Corner",
-      "watering_schedule": {
-        "frequency_days": 21,
-        "season_adjustments": {
-          "spring": 14,
-          "summer": 10,
-          "autumn": 21,
-          "winter": 30
-        }
-      },
-      "care_notes": "Very drought tolerant. Water sparingly and avoid overwatering.",
-      "emoji": "🐍🌿",
-      "active": true
-    },
-    {
-      "id": "pothos_kitchen",
-      "name": "Golden Pothos (Kitchen)",
-      "type": "Golden Pothos",
-      "scientific_name": "Epipremnum aureum",
-      "location": "Kitchen Hanging Basket",
+      "id": "chlorophytum_comosum_spiderplant",
+      "name": "Spider Plant (Indoor Table)",
+      "type": "Spider Plant",
+      "scientific_name": "Chlorophytum comosum",
+      "location": "Bright, indirect light indoors",
       "watering_schedule": {
         "frequency_days": 7,
         "season_adjustments": {
-          "spring": 5,
-          "summer": 4,
-          "autumn": 7,
-          "winter": 10
+          "spring": 7,
+          "summer": 5,
+          "autumn": 10,
+          "winter": 14
         }
       },
-      "care_notes": "Keep soil consistently moist but not waterlogged. Loves humidity.",
-      "emoji": "🍃✨",
+      "care_notes": "Use well-draining potting mix; allow the top 2 cm of soil to dry between waterings; maintain moderate humidity; trim any brown leaf tips; rotate pot periodically for even growth; remove and propagate plantlets to encourage fuller foliage.",
+      "emoji": "🪴",
       "active": true
     },
     {
-      "id": "peace_lily_bathroom",
-      "name": "Peace Lily (Bathroom)",
-      "type": "Peace Lily",
-      "scientific_name": "Spathiphyllum wallisii",
-      "location": "Bathroom Shelf",
+      "id": "aeonium_arboreum_shelf",
+      "name": "Tree Aeonium (Shelf)",
+      "type": "Tree Aeonium",
+      "scientific_name": "Aeonium arboreum",
+      "location": "Bright, indirect light indoors or sunny windowsill",
       "watering_schedule": {
-        "frequency_days": 5,
+        "frequency_days": 14,
         "season_adjustments": {
-          "spring": 4,
-          "summer": 3,
-          "autumn": 5,
-          "winter": 7
+          "spring": 12,
+          "summer": 10,
+          "autumn": 16,
+          "winter": 21
         }
       },
-      "care_notes": "Prefers consistently moist soil. Leaves will droop when thirsty.",
-      "emoji": "☮️🌸",
+      "care_notes": "Plant in a well-draining succulent mix; allow soil to dry out completely between waterings; provide bright light and avoid cold drafts; remove spent rosettes at stem base; repot when rootbound.",
+      "emoji": "🌵",
       "active": true
     }
   ],  "notification_settings": {
