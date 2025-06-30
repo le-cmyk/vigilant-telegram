@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-06-30T09:28:29.343628",
-    "total_watering_events": 70,
+    "last_updated": "2025-06-30T18:33:48.984964",
+    "total_watering_events": 71,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -1590,6 +1590,25 @@
       "telegram_response": {
         "message_id": 95,
         "date": 1751275709,
+        "success": true
+      }
+    },
+    {
+      "id": "c4ad8410-0372-4d1f-a4d5-c0b9ff69103e",
+      "timestamp": "2025-06-30T18:33:48.984928",
+      "date": "2025-06-30",
+      "time": "18:33:48",
+      "day_of_week": "Monday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** ☀️ Check soil moisture before watering",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 96,
+        "date": 1751308428,
         "success": true
       }
     }
