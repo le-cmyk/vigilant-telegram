@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-07-24T18:36:56.618428",
-    "total_watering_events": 118,
+    "last_updated": "2025-07-25T09:29:29.436570",
+    "total_watering_events": 119,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -2669,6 +2669,32 @@
       "telegram_response": {
         "message_id": 144,
         "date": 1753382216,
+        "success": true
+      }
+    },
+    {
+      "id": "b6fc7b84-666a-4575-86ce-12c763a9e685",
+      "timestamp": "2025-07-25T09:29:29.436531",
+      "date": "2025-07-25",
+      "time": "09:29:29",
+      "day_of_week": "Friday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n   💡 Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 🍃 Don't forget to check the drainage",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pelargonium_peltatum_balcony",
+          "name": "Ivy Geranium (Balcony)",
+          "watered_date": "2025-07-25",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 145,
+        "date": 1753435769,
         "success": true
       }
     }
