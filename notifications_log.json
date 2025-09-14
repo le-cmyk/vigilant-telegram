@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-09-13T18:07:31.731203",
-    "total_watering_events": 220,
+    "last_updated": "2025-09-14T09:06:17.605777",
+    "total_watering_events": 221,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -4880,6 +4880,25 @@
       "telegram_response": {
         "message_id": 246,
         "date": 1757786851,
+        "success": true
+      }
+    },
+    {
+      "id": "6a0954a7-4a0c-4f8b-a907-773c86ce63d2",
+      "timestamp": "2025-09-14T09:06:17.605738",
+      "date": "2025-09-14",
+      "time": "09:06:17",
+      "day_of_week": "Sunday",
+      "season": "autumn",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n🌿 *Peacock Plant (Indoor)* (Bright, indirect light indoors with high humidity)\n🪴 *Spider Plant (Indoor Table)* (Bright, indirect light indoors)\n\n\n🌍 Current Season: 🍂 Autumn\n\n💡 **Tip of the day:** 🌡️ Room temperature water is best",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 247,
+        "date": 1757840777,
         "success": true
       }
     }
