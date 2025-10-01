@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2025-09-30T18:10:17.625981",
-    "total_watering_events": 254,
+    "last_updated": "2025-10-01T09:08:19.451362",
+    "total_watering_events": 255,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -5585,6 +5585,32 @@
       "telegram_response": {
         "message_id": 280,
         "date": 1759255817,
+        "success": true
+      }
+    },
+    {
+      "id": "a0892e77-26e3-48c7-ab07-aeea663bd3c3",
+      "timestamp": "2025-10-01T09:08:19.451324",
+      "date": "2025-10-01",
+      "time": "09:08:19",
+      "day_of_week": "Wednesday",
+      "season": "autumn",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n   💡 Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n\n\n🌍 Current Season: 🍂 Autumn\n\n💡 **Tip of the day:** 💚 Happy plants = happy home!",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pelargonium_peltatum_balcony",
+          "name": "Ivy Geranium (Balcony)",
+          "watered_date": "2025-10-01",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 281,
+        "date": 1759309699,
         "success": true
       }
     }
