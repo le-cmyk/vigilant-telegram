@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-01-05T18:12:01.469997",
-    "total_watering_events": 447,
+    "last_updated": "2026-01-06T09:10:52.638530",
+    "total_watering_events": 448,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -9542,6 +9542,38 @@
       "telegram_response": {
         "message_id": 473,
         "date": 1767636721,
+        "success": true
+      }
+    },
+    {
+      "id": "69976839-748e-42fa-858a-d70d4680e93d",
+      "timestamp": "2026-01-06T09:10:52.638486",
+      "date": "2026-01-06",
+      "time": "09:10:52",
+      "day_of_week": "Tuesday",
+      "season": "winter",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌿 *Peacock Plant (Indoor)* (Bright, indirect light indoors with high humidity)\n   💡 Keep soil evenly moist but not waterlogged; use filtered or rainwater to prevent leaf tip browning; maintain humidity above 60%; avoid direct sun; dust leaves regularly to promote healthy photosynthesis.\n🪴 *Spider Plant (Indoor Table)* (Bright, indirect light indoors)\n   💡 Use well-draining potting mix; allow the top 2 cm of soil to dry between waterings; maintain moderate humidity; trim any brown leaf tips; rotate pot periodically for even growth; remove and propagate plantlets to encourage fuller foliage.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌵 *Flaming Katy (Indoor Window)* (Bright, indirect light indoors near a window)\n🌵 *Tree Aeonium (Shelf)* (Bright, indirect light indoors or sunny windowsill)\n\n\n🌍 Current Season: ❄️ Winter\n\n💡 **Tip of the day:** 💧 Water in the morning for best absorption",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "calathea_makoyana_indoor",
+          "name": "Peacock Plant (Indoor)",
+          "watered_date": "2026-01-06",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "chlorophytum_comosum_spiderplant",
+          "name": "Spider Plant (Indoor Table)",
+          "watered_date": "2026-01-06",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 474,
+        "date": 1767690652,
         "success": true
       }
     }
