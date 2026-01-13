@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-01-12T18:11:14.964342",
-    "total_watering_events": 461,
+    "last_updated": "2026-01-13T09:11:36.369059",
+    "total_watering_events": 462,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -9834,6 +9834,38 @@
       "telegram_response": {
         "message_id": 487,
         "date": 1768241474,
+        "success": true
+      }
+    },
+    {
+      "id": "fd68198e-51d1-4f7e-898b-13b6dc1f713b",
+      "timestamp": "2026-01-13T09:11:36.369018",
+      "date": "2026-01-13",
+      "time": "09:11:36",
+      "day_of_week": "Tuesday",
+      "season": "winter",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n   💡 Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n   💡 Use well-draining soil; allow top 2-3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.\n\n\n🌍 Current Season: ❄️ Winter\n\n💡 **Tip of the day:** 🌡️ Room temperature water is best",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pelargonium_peltatum_balcony",
+          "name": "Ivy Geranium (Balcony)",
+          "watered_date": "2026-01-13",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "dracaena_marginata_indoor",
+          "name": "Dragon Tree (Indoor Corner)",
+          "watered_date": "2026-01-13",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 488,
+        "date": 1768295496,
         "success": true
       }
     }
