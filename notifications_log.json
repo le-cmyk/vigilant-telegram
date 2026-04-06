@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-04-05T18:16:07.517590",
-    "total_watering_events": 627,
+    "last_updated": "2026-04-06T09:36:01.103910",
+    "total_watering_events": 628,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -13290,6 +13290,32 @@
       "telegram_response": {
         "message_id": 653,
         "date": 1775412967,
+        "success": true
+      }
+    },
+    {
+      "id": "5f9a6fa0-5d77-492d-b202-1b61d18e550f",
+      "timestamp": "2026-04-06T09:36:01.103871",
+      "date": "2026-04-06",
+      "time": "09:36:01",
+      "day_of_week": "Monday",
+      "season": "spring",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n   💡 Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌵 *Flaming Katy (Indoor Window)* (Bright, indirect light indoors near a window)\n🌵 *Tree Aeonium (Shelf)* (Bright, indirect light indoors or sunny windowsill)\n\n\n🌍 Current Season: 🌸 Spring\n\n💡 **Tip of the day:** 💧 Water in the morning for best absorption",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pelargonium_peltatum_balcony",
+          "name": "Ivy Geranium (Balcony)",
+          "watered_date": "2026-04-06",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 654,
+        "date": 1775468161,
         "success": true
       }
     }
