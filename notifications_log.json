@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-05-11T18:46:06.283599",
-    "total_watering_events": 699,
+    "last_updated": "2026-05-12T09:58:32.428329",
+    "total_watering_events": 700,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -14828,6 +14828,38 @@
       "telegram_response": {
         "message_id": 725,
         "date": 1778525166,
+        "success": true
+      }
+    },
+    {
+      "id": "e1900003-cba6-41df-bf2d-479dd1aa7046",
+      "timestamp": "2026-05-12T09:58:32.428284",
+      "date": "2026-05-12",
+      "time": "09:58:32",
+      "day_of_week": "Tuesday",
+      "season": "spring",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n   💡 Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n   💡 Use well-draining soil; allow top 2-3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌵 *Flaming Katy (Indoor Window)* (Bright, indirect light indoors near a window)\n🌵 *Tree Aeonium (Shelf)* (Bright, indirect light indoors or sunny windowsill)\n\n\n🌍 Current Season: 🌸 Spring\n\n💡 **Tip of the day:** 💧 Water in the morning for best absorption",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pelargonium_peltatum_balcony",
+          "name": "Ivy Geranium (Balcony)",
+          "watered_date": "2026-05-12",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "dracaena_marginata_indoor",
+          "name": "Dragon Tree (Indoor Corner)",
+          "watered_date": "2026-05-12",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 726,
+        "date": 1778579912,
         "success": true
       }
     }
