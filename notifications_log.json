@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-05-19T18:45:10.771813",
-    "total_watering_events": 715,
+    "last_updated": "2026-05-20T10:11:51.722637",
+    "total_watering_events": 716,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -15178,6 +15178,32 @@
       "telegram_response": {
         "message_id": 741,
         "date": 1779216310,
+        "success": true
+      }
+    },
+    {
+      "id": "fa7eb938-5a6f-4304-85dc-f8d4a4ae4667",
+      "timestamp": "2026-05-20T10:11:51.722596",
+      "date": "2026-05-20",
+      "time": "10:11:51",
+      "day_of_week": "Wednesday",
+      "season": "spring",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n   💡 Use well-draining soil; allow top 2-3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.\n\n\n🌍 Current Season: 🌸 Spring\n\n💡 **Tip of the day:** 💚 Happy plants = happy home!",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "dracaena_marginata_indoor",
+          "name": "Dragon Tree (Indoor Corner)",
+          "watered_date": "2026-05-20",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 742,
+        "date": 1779271911,
         "success": true
       }
     }
