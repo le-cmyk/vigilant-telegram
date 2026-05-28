@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-05-27T18:56:04.193225",
-    "total_watering_events": 731,
+    "last_updated": "2026-05-28T10:31:04.635997",
+    "total_watering_events": 732,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -15521,6 +15521,32 @@
       "telegram_response": {
         "message_id": 757,
         "date": 1779908164,
+        "success": true
+      }
+    },
+    {
+      "id": "daddc0ee-8aef-4145-b9dc-91273a5ebcdb",
+      "timestamp": "2026-05-28T10:31:04.635956",
+      "date": "2026-05-28",
+      "time": "10:31:04",
+      "day_of_week": "Thursday",
+      "season": "spring",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n   💡 Use well-draining soil; allow top 2-3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n\n\n🌍 Current Season: 🌸 Spring\n\n💡 **Tip of the day:** 💚 Happy plants = happy home!",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "dracaena_marginata_indoor",
+          "name": "Dragon Tree (Indoor Corner)",
+          "watered_date": "2026-05-28",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 758,
+        "date": 1779964264,
         "success": true
       }
     }
