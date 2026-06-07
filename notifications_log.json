@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-06-07T10:03:24.989131",
-    "total_watering_events": 752,
+    "last_updated": "2026-06-07T18:35:19.283474",
+    "total_watering_events": 753,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -15993,6 +15993,25 @@
       "telegram_response": {
         "message_id": 778,
         "date": 1780826604,
+        "success": true
+      }
+    },
+    {
+      "id": "b3e0ce88-eb36-4a8d-acac-b42ebf8edfbc",
+      "timestamp": "2026-06-07T18:35:19.283447",
+      "date": "2026-06-07",
+      "time": "18:35:19",
+      "day_of_week": "Sunday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 💚 Happy plants = happy home!",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 779,
+        "date": 1780857319,
         "success": true
       }
     }
