@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-06-08T10:41:48.291686",
-    "total_watering_events": 754,
+    "last_updated": "2026-06-08T18:58:36.589516",
+    "total_watering_events": 755,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -16031,6 +16031,25 @@
       "telegram_response": {
         "message_id": 780,
         "date": 1780915308,
+        "success": true
+      }
+    },
+    {
+      "id": "1ebe3169-110c-4b1f-86b5-1346b2762353",
+      "timestamp": "2026-06-08T18:58:36.589466",
+      "date": "2026-06-08",
+      "time": "18:58:36",
+      "day_of_week": "Monday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌿 *Peacock Plant (Indoor)* (Bright, indirect light indoors with high humidity)\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n🪴 *Spider Plant (Indoor Table)* (Bright, indirect light indoors)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 💚 Happy plants = happy home!",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [],
+      "telegram_response": {
+        "message_id": 781,
+        "date": 1780945116,
         "success": true
       }
     }
