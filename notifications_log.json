@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-06-19T18:45:14.216741",
-    "total_watering_events": 777,
+    "last_updated": "2026-06-20T10:05:08.482759",
+    "total_watering_events": 778,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -16540,6 +16540,38 @@
       "telegram_response": {
         "message_id": 803,
         "date": 1781894714,
+        "success": true
+      }
+    },
+    {
+      "id": "5edd569a-83f7-4057-9a4a-333850ec38bf",
+      "timestamp": "2026-06-20T10:05:08.482717",
+      "date": "2026-06-20",
+      "time": "10:05:08",
+      "day_of_week": "Saturday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌿 *Peacock Plant (Indoor)* (Bright, indirect light indoors with high humidity)\n   💡 Keep soil evenly moist but not waterlogged; use filtered or rainwater to prevent leaf tip browning; maintain humidity above 60%; avoid direct sun; dust leaves regularly to promote healthy photosynthesis.\n🪴 *Spider Plant (Indoor Table)* (Bright, indirect light indoors)\n   💡 Use well-draining potting mix; allow the top 2 cm of soil to dry between waterings; maintain moderate humidity; trim any brown leaf tips; rotate pot periodically for even growth; remove and propagate plantlets to encourage fuller foliage.\n\n\n⏰ **Coming Up (Next 2 Days):**\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** ☀️ Check soil moisture before watering",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "calathea_makoyana_indoor",
+          "name": "Peacock Plant (Indoor)",
+          "watered_date": "2026-06-20",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "chlorophytum_comosum_spiderplant",
+          "name": "Spider Plant (Indoor Table)",
+          "watered_date": "2026-06-20",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 804,
+        "date": 1781949908,
         "success": true
       }
     }
