@@ -3,8 +3,8 @@
     "created_at": "2025-05-28T18:46:24.216540",
     "project": "Watering Plants Telegram Notifier",
     "version": "2.0",
-    "last_updated": "2026-08-13T18:22:13.310490",
-    "total_watering_events": 886,
+    "last_updated": "2026-08-14T09:26:36.237426",
+    "total_watering_events": 887,
     "description": "Notification log that tracks when watering reminders are sent and assumes watering is completed when notification is sent"
   },
   "watering_events": [
@@ -18979,6 +18979,50 @@
       "telegram_response": {
         "message_id": 912,
         "date": 1786645333,
+        "success": true
+      }
+    },
+    {
+      "id": "baa25c7c-10cd-47ce-bb03-ebacbe635664",
+      "timestamp": "2026-08-14T09:26:36.237392",
+      "date": "2026-08-14",
+      "time": "09:26:36",
+      "day_of_week": "Friday",
+      "season": "summer",
+      "notification_type": "watering_reminder",
+      "message": "🌱 **Plant Watering Reminders**\n\n\n📅 **Due Today:**\n🌸 *Ivy Geranium (Balcony)* (Outdoor balcony with full sun to partial shade)\n   💡 Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.\n🌿 *Peacock Plant (Indoor)* (Bright, indirect light indoors with high humidity)\n   💡 Keep soil evenly moist but not waterlogged; use filtered or rainwater to prevent leaf tip browning; maintain humidity above 60%; avoid direct sun; dust leaves regularly to promote healthy photosynthesis.\n🌴 *Dragon Tree (Indoor Corner)* (Bright, indirect light indoors; avoid drafts)\n   💡 Use well-draining soil; allow top 2-3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.\n🪴 *Spider Plant (Indoor Table)* (Bright, indirect light indoors)\n   💡 Use well-draining potting mix; allow the top 2 cm of soil to dry between waterings; maintain moderate humidity; trim any brown leaf tips; rotate pot periodically for even growth; remove and propagate plantlets to encourage fuller foliage.\n\n\n🌍 Current Season: ☀️ Summer\n\n💡 **Tip of the day:** 💧 Water in the morning for best absorption",
+      "status": "success",
+      "chat_id": "6620968297",
+      "bot_token_last_4": "zKEM",
+      "plants_watered": [
+        {
+          "plant_id": "pelargonium_peltatum_balcony",
+          "name": "Ivy Geranium (Balcony)",
+          "watered_date": "2026-08-14",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "calathea_makoyana_indoor",
+          "name": "Peacock Plant (Indoor)",
+          "watered_date": "2026-08-14",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "dracaena_marginata_indoor",
+          "name": "Dragon Tree (Indoor Corner)",
+          "watered_date": "2026-08-14",
+          "was_overdue": false
+        },
+        {
+          "plant_id": "chlorophytum_comosum_spiderplant",
+          "name": "Spider Plant (Indoor Table)",
+          "watered_date": "2026-08-14",
+          "was_overdue": false
+        }
+      ],
+      "telegram_response": {
+        "message_id": 913,
+        "date": 1786699596,
         "success": true
       }
     }
