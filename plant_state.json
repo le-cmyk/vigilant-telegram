@@ -118,8 +118,9 @@
   ],
   "snoozes": [],
   "processed_actions": [
-    "6620968297:1084:settings"
+    "6620968297:1084:settings",
+    "6620968297:1084:status"
   ],
-  "telegram_offset": 997300855,
+  "telegram_offset": 997300860,
   "conversation_flows": {}
 }
