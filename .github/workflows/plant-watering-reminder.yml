@@ -1,10 +1,7 @@
 name: Plant Watering Reminder
 
 on:
-  schedule:
-    # Runs twice daily at 9:00 AM and 6:00 PM UTC
-    - cron: '0 9,18 * * *'
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch: # Manual trigger only; automatic schedule disabled
 
 jobs:
   send-plant-reminders:
