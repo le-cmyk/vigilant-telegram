@@ -10,7 +10,7 @@
       "name": "Chinese Money Plant",
       "type": "Chinese Money Plant",
       "scientific_name": "Pilea peperomioides",
-      "location": "Indoors in bright, indirect light",
+      "location": "Room",
       "watering_schedule": {
         "frequency_days": 8,
         "season_adjustments": {
@@ -29,7 +29,7 @@
       "name": "Dragon Tree",
       "type": "Dragon Tree",
       "scientific_name": "Dracaena marginata",
-      "location": "Indoors in bright, indirect light",
+      "location": "Living room",
       "watering_schedule": {
         "frequency_days": 12,
         "season_adjustments": {
@@ -48,7 +48,7 @@
       "name": "Never-Never Plant",
       "type": "Ctenanthe Grey Star",
       "scientific_name": "Ctenanthe setosa 'Grey Star'",
-      "location": "Indoors in bright, indirect light with good humidity",
+      "location": "Living room",
       "watering_schedule": {
         "frequency_days": 7,
         "season_adjustments": {
@@ -67,7 +67,7 @@
       "name": "Balcony Plants",
       "type": "Mixed balcony group",
       "scientific_name": "Mixed species",
-      "location": "Outdoor balcony",
+      "location": "Balcony",
       "watering_schedule": {
         "frequency_days": 8,
         "season_adjustments": {

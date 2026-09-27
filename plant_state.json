@@ -5,7 +5,7 @@
       "id": "pilea_peperomioides_indoor",
       "name": "Chinese Money Plant",
       "type": "Chinese Money Plant",
-      "location": "Indoors in bright, indirect light",
+      "location": "Room",
       "interval_days": 8,
       "seasonal_intervals": {
         "spring": 7,
@@ -24,7 +24,7 @@
       "id": "dracaena_marginata_indoor",
       "name": "Dragon Tree",
       "type": "Dragon Tree",
-      "location": "Indoors in bright, indirect light",
+      "location": "Living room",
       "interval_days": 12,
       "seasonal_intervals": {
         "spring": 10,
@@ -43,7 +43,7 @@
       "id": "ctenanthe_setosa_grey_star_indoor",
       "name": "Never-Never Plant",
       "type": "Ctenanthe Grey Star",
-      "location": "Indoors in bright, indirect light with good humidity",
+      "location": "Living room",
       "interval_days": 7,
       "seasonal_intervals": {
         "spring": 6,
@@ -62,7 +62,7 @@
       "id": "balcony_plants_group",
       "name": "Balcony Plants",
       "type": "Mixed balcony group",
-      "location": "Outdoor balcony",
+      "location": "Balcony",
       "interval_days": 8,
       "seasonal_intervals": {
         "spring": 7,

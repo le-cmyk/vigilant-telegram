@@ -42,7 +42,11 @@ class BotApp:
             keyboard = [[self.handlers._button("💧 Watered", f"water:{plant['id']}"), self.handlers._button("⏰ Snooze", f"snooze:{plant['id']}")]]
             when = "due today" if days_left == 0 else f"due in {days_left} day(s)"
             try:
-                result = self.client.send(self.chat_id, f"🪴 {plant['name']}\nWatering is {when}.", keyboard)
+                result = self.client.send(
+                    self.chat_id,
+                    f"🪴 {plant['name']}\n📍 {plant['location']}\nWatering is {when}.",
+                    keyboard,
+                )
                 self.repository.update(lambda s: s["notification_events"].append({"id": f"telegram:{result.get('message_id', 'unknown')}:{marker}", "plant_id": plant["id"], "dedupe_key": marker, "sent_at": now.isoformat(), "status": "sent"}))
             except Exception as exc:
                 LOG.exception("Failed to send reminder for plant %s", plant["id"])

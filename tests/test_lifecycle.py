@@ -125,6 +125,7 @@ def test_reminder_never_records_watering_and_deduplicates(setup):
     app._remind(stamp); app._remind(stamp)
     state = repo.load()
     assert len(state["notification_events"]) == 1
+    assert app.client.sent[0][1] == "🪴 Fern\n📍 Kitchen\nWatering is due today."
     assert state["watering_events"] == []
     assert service.get(plant["id"])["last_watered"] is None
     service.water(plant["id"], "confirmed")
