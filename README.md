@@ -1,150 +1,38 @@
-# 🌱 Plant Watering Reminder System
+# Telegram Plant Care
 
-An intelligent plant care reminder system that sends personalized watering notifications via Telegram using GitHub Actions. Track different plant types with customized schedules that adapt to seasons!
+Manage plant schedules, watering history, and reminders through Telegram. Watering calculations are deterministic; the bot does not use AI.
 
-## ✨ Features
+## Run entirely on GitHub Free
 
-- **Smart Scheduling**: Different watering schedules for each plant type
-- **Seasonal Adjustments**: Automatically adjusts watering frequency based on seasons
-- **Telegram Notifications**: Sends beautiful, organized reminders via Telegram
-- **Plant Status Tracking**: Monitors overdue, due today, and upcoming watering needs
-- **Care Tips**: Includes helpful plant care advice in notifications
-- **Automated Logging**: Tracks all notifications and plant care history
-- **GitHub Actions Integration**: Runs automatically twice daily
+1. Create a Telegram bot with [@BotFather](https://t.me/BotFather) and send it a message.
+2. In repository **Settings → Secrets and variables → Actions**, add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. These are the only bot secrets required. Never put either value in a file or commit.
+3. Enable GitHub Actions and allow the workflow's `GITHUB_TOKEN` to write repository contents. The **Telegram Plant Bot** workflow polls Telegram once an hour, handles menu actions, and saves non-secret state in `plant_state.json` on the default branch.
+4. Send `/start` to the bot. Replies and button actions can take up to an hour because GitHub Actions starts short jobs instead of a continuously running service. You can also start a cycle manually from **Actions → Telegram Plant Bot → Run workflow**.
 
-## 🪴 Supported Plant Types
+GitHub-hosted standard runners are free for public repositories. GitHub Free includes 2,000 Actions minutes each month for private repositories; hourly polling uses about 720 one-minute runs per month. This repository is public, so standard runner minutes are free. GitHub may delay scheduled runs during periods of high load and disables scheduled workflows in public repositories after 60 days without repository activity. [GitHub Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions) · [Scheduled workflow behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)
 
-The system comes pre-configured with 5 popular houseplants:
+`plant_state.json` stores plant details, settings, watering and notification history, callback deduplication, and Telegram polling progress. It does not store the bot token or chat ID. **This repository is public, so its state file and plant information are public too.** State writes use atomic replacement, and the Actions workflow serializes bot runs before committing state updates.
 
-1. **🕷️🌱 Spider Plant** - Weekly watering (5-14 days based on season)
-2. **💎🌿 Jade Plant** - Bi-weekly watering (7-21 days based on season)  
-3. **🐍🌿 Snake Plant** - Monthly watering (10-30 days based on season)
-4. **🍃✨ Golden Pothos** - Weekly watering (4-10 days based on season)
-5. **☮️🌸 Peace Lily** - Frequent watering (3-7 days based on season)
+## Telegram controls
 
-## 📁 Configuration Files
+- **My plants** lists plants with Watered, Snooze, Edit, Pause/Resume, and Delete actions. Delete asks for confirmation.
+- **Add plant** and **Edit** guide you through name, type, location, watering interval, and optional seasonal intervals.
+- **Watering / Status** lists plants that are due or approaching their due date.
+- **Settings** controls reminders, preferred reminder time, timezone, upcoming-warning period, and seasonal adjustments.
 
-### `plant_config.json`
-Contains plant definitions, care schedules, and notification settings
+Reminders default to **ON**. You can turn them off in Settings. Actionable due and upcoming reminders are sent at or after the configured local time on a bot cycle. Sending a reminder never changes watering history or the next watering date. Only the explicit **Watered** action appends a watering event and advances the date. Replayed button actions do not duplicate watering records.
 
-### `notifications_log.json` 
-Tracks watering events based on sent notifications and assumes watering completion
+Snooze changes the next reminder date without recording watering. Paused and deleted plants are excluded from reminder checks. Seasonal intervals are selected using the current season and can be disabled in Settings.
 
-## 🤖 GitHub Actions Workflow
+## Existing data
 
-The system runs automatically twice daily at:
-- **9:00 AM UTC** - Morning reminder
-- **6:00 PM UTC** - Evening check
+On first run, the bot imports plant definitions from `plant_config.json` into `plant_state.json`. It does **not** import `notifications_log.json` as watering history because the old system treated sent reminders as completed watering. Imported plants have no confirmed watering date and are initially due; review them in Telegram and record watering only when it happened.
 
-You can also trigger it manually from the GitHub Actions tab.
+## GitHub Actions and tests
 
-## 🔧 Setup Instructions
+GitHub Actions polls Telegram hourly and runs tests on pushes and pull requests. Reminders are enabled by default. No server, database, or paid hosting service is used.
 
-1. **Fork this repository** to your GitHub account
-
-2. **Set up Telegram Bot**:
-   - Message [@BotFather](https://t.me/botfather) on Telegram
-   - Create a new bot with `/newbot`
-   - Save your bot token
-
-3. **Get your Chat ID**:
-   - Message your bot
-   - Visit: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
-   - Find your chat ID in the response
-
-4. **Configure GitHub Secrets**:
-   - Go to your repository Settings → Secrets and variables → Actions
-   - Add these secrets:
-     - `TELEGRAM_BOT_TOKEN`: Your bot token
-     - `TELEGRAM_CHAT_ID`: Your chat ID
-
-5. **Customize your plants**:
-   - Edit `plant_config.json` to match your actual plants
-   - The system will automatically start tracking from the first notification
-
-6. **Enable GitHub Actions**:
-   - Go to the Actions tab in your repository
-   - Enable workflows if prompted
-
-## 📱 Notification Examples
-
-**When plants need water:**
+```sh
+python3 -m pip install -r requirements-dev.txt
+python3 -m pytest -q
 ```
-🌱 Plant Watering Reminders
-
-🚨 URGENT - Overdue:
-🐍🌿 Snake Plant (Bedroom Corner)
-   💡 Very drought tolerant. Water sparingly.
-
-📅 Due Today:  
-🕷️🌱 Spider Plant (Living Room Window)
-   💡 Water when top inch of soil is dry.
-
-⏰ Coming Up (Next 2 Days):
-💎🌿 Jade Plant (Office Desk)
-
-🌍 Current Season: 🌸 Spring
-
-💡 Tip of the day: 💧 Water in the morning for best absorption
-```
-
-**When all plants are happy:**
-```
-🌱 Plant Care Update
-
-All your plants are happy and well-watered! 🎉
-
-Next check: Tomorrow
-```
-
-## 🌿 Adding New Plants
-
-To add a new plant, edit `plant_config.json` and add a new plant object with:
-- Unique `id`
-- Descriptive `name` and `location`
-- `watering_schedule` with seasonal adjustments
-- `care_notes` for helpful tips
-- Fun `emoji` for visual appeal
-- Set `active: true`
-
-The system will automatically track watering from the first notification sent.
-
-## 🔄 Seasonal Adjustments
-
-The system automatically adjusts watering schedules based on seasons:
-- **Spring** (Mar-May): Moderate growth period
-- **Summer** (Jun-Aug): High growth, more frequent watering  
-- **Autumn** (Sep-Nov): Slowing growth, less frequent watering
-- **Winter** (Dec-Feb): Dormant period, least frequent watering
-
-## 📊 Logging & History
-
-All notifications are logged to `notifications_log.json` with:
-- Timestamp and plant status summary
-- Message content and delivery status
-- **Automatic watering tracking**: Plants are considered watered when notifications are sent
-- Seasonal information and watering assumptions
-- Error tracking
-
-## 🚰 How the Watering System Works
-
-**Version 2.0 introduces a streamlined approach:**
-
-1. **Notification = Watering**: When a reminder is sent, the system assumes you water the plants
-2. **Single Source of Truth**: All watering history is derived from `notifications_log.json`
-3. **No Manual Updates**: No need to manually track when you water plants
-4. **Intelligent Scheduling**: Next watering dates calculated based on previous notifications
-
-This eliminates the need for manual watering history maintenance while providing automatic, accurate tracking.
-
-## 🛠️ Technical Details
-
-- **Language**: Python 3.9+
-- **Dependencies**: `requests` for Telegram API calls
-- **Automation**: GitHub Actions with cron scheduling
-- **Data Storage**: JSON files for configuration and history
-- **Notifications**: Telegram Bot API with Markdown formatting
-
----
-
-🌱 Happy plant parenting! Your green friends will thank you. 🌿

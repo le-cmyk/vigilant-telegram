@@ -34,6 +34,10 @@ coverage.xml
 
 # Environnements virtuels
 .env
+.env.*
+!.env.example
+plant_state.json
+*.state.json
 .venv
 env/
 venv/

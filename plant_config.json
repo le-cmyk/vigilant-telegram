@@ -129,6 +129,7 @@
     ],
     "group_notifications": true,
     "include_care_tips": true,
-    "assume_watering_on_notification": true
+    "assume_watering_on_notification": false,
+    "reminders_enabled": true
   }
 }
