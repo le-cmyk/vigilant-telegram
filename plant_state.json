@@ -86,7 +86,36 @@
     "seasonal_adjustments": true
   },
   "watering_events": [],
-  "notification_events": [],
+  "notification_events": [
+    {
+      "id": "telegram:1086:pilea_peperomioides_indoor:2026-09-27:due",
+      "plant_id": "pilea_peperomioides_indoor",
+      "dedupe_key": "pilea_peperomioides_indoor:2026-09-27:due",
+      "sent_at": "2026-09-27T13:30:16.104050+02:00",
+      "status": "sent"
+    },
+    {
+      "id": "telegram:1087:dracaena_marginata_indoor:2026-09-27:due",
+      "plant_id": "dracaena_marginata_indoor",
+      "dedupe_key": "dracaena_marginata_indoor:2026-09-27:due",
+      "sent_at": "2026-09-27T13:30:16.104050+02:00",
+      "status": "sent"
+    },
+    {
+      "id": "telegram:1088:ctenanthe_setosa_grey_star_indoor:2026-09-27:due",
+      "plant_id": "ctenanthe_setosa_grey_star_indoor",
+      "dedupe_key": "ctenanthe_setosa_grey_star_indoor:2026-09-27:due",
+      "sent_at": "2026-09-27T13:30:16.104050+02:00",
+      "status": "sent"
+    },
+    {
+      "id": "telegram:1089:balcony_plants_group:2026-09-27:due",
+      "plant_id": "balcony_plants_group",
+      "dedupe_key": "balcony_plants_group:2026-09-27:due",
+      "sent_at": "2026-09-27T13:30:16.104050+02:00",
+      "status": "sent"
+    }
+  ],
   "snoozes": [],
   "processed_actions": [
     "6620968297:1084:settings"
