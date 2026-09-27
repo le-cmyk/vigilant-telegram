@@ -16,9 +16,9 @@
       "active": true,
       "paused": false,
       "created_at": "2026-09-27",
-      "last_watered": null,
-      "next_due": "2026-09-27",
-      "revision": 0
+      "last_watered": "2026-09-27",
+      "next_due": "2026-10-06",
+      "revision": 1
     },
     {
       "id": "dracaena_marginata_indoor",
@@ -35,9 +35,9 @@
       "active": true,
       "paused": false,
       "created_at": "2026-09-27",
-      "last_watered": null,
-      "next_due": "2026-09-27",
-      "revision": 0
+      "last_watered": "2026-09-27",
+      "next_due": "2026-10-09",
+      "revision": 1
     },
     {
       "id": "ctenanthe_setosa_grey_star_indoor",
@@ -54,9 +54,9 @@
       "active": true,
       "paused": false,
       "created_at": "2026-09-27",
-      "last_watered": null,
-      "next_due": "2026-09-27",
-      "revision": 0
+      "last_watered": "2026-09-27",
+      "next_due": "2026-10-05",
+      "revision": 1
     },
     {
       "id": "balcony_plants_group",
@@ -73,9 +73,9 @@
       "active": true,
       "paused": false,
       "created_at": "2026-09-27",
-      "last_watered": null,
-      "next_due": "2026-09-27",
-      "revision": 0
+      "last_watered": "2026-09-27",
+      "next_due": "2026-10-05",
+      "revision": 1
     }
   ],
   "settings": {
@@ -85,7 +85,36 @@
     "upcoming_warning_days": 2,
     "seasonal_adjustments": true
   },
-  "watering_events": [],
+  "watering_events": [
+    {
+      "id": "manual-2026-09-27-pilea_peperomioides_indoor",
+      "action_id": null,
+      "plant_id": "pilea_peperomioides_indoor",
+      "watered_at": "2026-09-27",
+      "next_due": "2026-10-06"
+    },
+    {
+      "id": "manual-2026-09-27-dracaena_marginata_indoor",
+      "action_id": null,
+      "plant_id": "dracaena_marginata_indoor",
+      "watered_at": "2026-09-27",
+      "next_due": "2026-10-09"
+    },
+    {
+      "id": "manual-2026-09-27-ctenanthe_setosa_grey_star_indoor",
+      "action_id": null,
+      "plant_id": "ctenanthe_setosa_grey_star_indoor",
+      "watered_at": "2026-09-27",
+      "next_due": "2026-10-05"
+    },
+    {
+      "id": "manual-2026-09-27-balcony_plants_group",
+      "action_id": null,
+      "plant_id": "balcony_plants_group",
+      "watered_at": "2026-09-27",
+      "next_due": "2026-10-05"
+    }
+  ],
   "notification_events": [
     {
       "id": "telegram:1086:pilea_peperomioides_indoor:2026-09-27:due",
