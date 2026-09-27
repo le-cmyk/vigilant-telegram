@@ -149,8 +149,9 @@
   "processed_actions": [
     "6620968297:1084:settings",
     "6620968297:1084:status",
-    "6620968297:1092:status"
+    "6620968297:1092:status",
+    "6620968297:1095:status"
   ],
-  "telegram_offset": 997300863,
+  "telegram_offset": 997300864,
   "conversation_flows": {}
 }
