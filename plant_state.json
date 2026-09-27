@@ -2,34 +2,15 @@
   "version": 1,
   "plants": [
     {
-      "id": "pelargonium_peltatum_balcony",
-      "name": "Ivy Geranium (Balcony)",
-      "type": "Ivy Geranium",
-      "location": "Outdoor balcony with full sun to partial shade",
-      "interval_days": 7,
-      "seasonal_intervals": {
-        "spring": 6,
-        "summer": 4,
-        "autumn": 8,
-        "winter": 12
-      },
-      "active": true,
-      "paused": false,
-      "created_at": "2026-09-27",
-      "last_watered": null,
-      "next_due": "2026-09-27",
-      "revision": 0
-    },
-    {
-      "id": "calathea_makoyana_indoor",
-      "name": "Peacock Plant (Indoor)",
-      "type": "Peacock Plant",
-      "location": "Bright, indirect light indoors with high humidity",
-      "interval_days": 7,
+      "id": "pilea_peperomioides_indoor",
+      "name": "Chinese Money Plant",
+      "type": "Chinese Money Plant",
+      "location": "Indoors in bright, indirect light",
+      "interval_days": 8,
       "seasonal_intervals": {
         "spring": 7,
-        "summer": 5,
-        "autumn": 10,
+        "summer": 6,
+        "autumn": 9,
         "winter": 14
       },
       "active": true,
@@ -41,13 +22,13 @@
     },
     {
       "id": "dracaena_marginata_indoor",
-      "name": "Dragon Tree (Indoor Corner)",
+      "name": "Dragon Tree",
       "type": "Dragon Tree",
-      "location": "Bright, indirect light indoors; avoid drafts",
-      "interval_days": 10,
+      "location": "Indoors in bright, indirect light",
+      "interval_days": 12,
       "seasonal_intervals": {
-        "spring": 8,
-        "summer": 6,
+        "spring": 10,
+        "summer": 8,
         "autumn": 12,
         "winter": 18
       },
@@ -59,35 +40,16 @@
       "revision": 0
     },
     {
-      "id": "kalanchoe_blossfeldiana_indoor",
-      "name": "Flaming Katy (Indoor Window)",
-      "type": "Kalanchoe",
-      "location": "Bright, indirect light indoors near a window",
-      "interval_days": 14,
-      "seasonal_intervals": {
-        "spring": 12,
-        "summer": 10,
-        "autumn": 16,
-        "winter": 21
-      },
-      "active": true,
-      "paused": false,
-      "created_at": "2026-09-27",
-      "last_watered": null,
-      "next_due": "2026-09-27",
-      "revision": 0
-    },
-    {
-      "id": "chlorophytum_comosum_spiderplant",
-      "name": "Spider Plant (Indoor Table)",
-      "type": "Spider Plant",
-      "location": "Bright, indirect light indoors",
+      "id": "ctenanthe_setosa_grey_star_indoor",
+      "name": "Never-Never Plant",
+      "type": "Ctenanthe Grey Star",
+      "location": "Indoors in bright, indirect light with good humidity",
       "interval_days": 7,
       "seasonal_intervals": {
-        "spring": 7,
+        "spring": 6,
         "summer": 5,
-        "autumn": 10,
-        "winter": 14
+        "autumn": 8,
+        "winter": 11
       },
       "active": true,
       "paused": false,
@@ -97,16 +59,16 @@
       "revision": 0
     },
     {
-      "id": "aeonium_arboreum_shelf",
-      "name": "Tree Aeonium (Shelf)",
-      "type": "Tree Aeonium",
-      "location": "Bright, indirect light indoors or sunny windowsill",
-      "interval_days": 14,
+      "id": "balcony_plants_group",
+      "name": "Balcony Plants",
+      "type": "Mixed balcony group",
+      "location": "Outdoor balcony",
+      "interval_days": 8,
       "seasonal_intervals": {
-        "spring": 12,
-        "summer": 10,
-        "autumn": 16,
-        "winter": 21
+        "spring": 7,
+        "summer": 4,
+        "autumn": 8,
+        "winter": 14
       },
       "active": true,
       "paused": false,
@@ -119,55 +81,12 @@
   "settings": {
     "reminders_enabled": true,
     "preferred_time": "09:00",
-    "timezone": "UTC",
+    "timezone": "Europe/Paris",
     "upcoming_warning_days": 2,
     "seasonal_adjustments": true
   },
   "watering_events": [],
-  "notification_events": [
-    {
-      "id": "telegram:1002:pelargonium_peltatum_balcony:2026-09-27:due",
-      "plant_id": "pelargonium_peltatum_balcony",
-      "dedupe_key": "pelargonium_peltatum_balcony:2026-09-27:due",
-      "sent_at": "2026-09-27T10:47:39.952770+00:00",
-      "status": "sent"
-    },
-    {
-      "id": "telegram:1003:calathea_makoyana_indoor:2026-09-27:due",
-      "plant_id": "calathea_makoyana_indoor",
-      "dedupe_key": "calathea_makoyana_indoor:2026-09-27:due",
-      "sent_at": "2026-09-27T10:47:39.952770+00:00",
-      "status": "sent"
-    },
-    {
-      "id": "telegram:1004:dracaena_marginata_indoor:2026-09-27:due",
-      "plant_id": "dracaena_marginata_indoor",
-      "dedupe_key": "dracaena_marginata_indoor:2026-09-27:due",
-      "sent_at": "2026-09-27T10:47:39.952770+00:00",
-      "status": "sent"
-    },
-    {
-      "id": "telegram:1005:kalanchoe_blossfeldiana_indoor:2026-09-27:due",
-      "plant_id": "kalanchoe_blossfeldiana_indoor",
-      "dedupe_key": "kalanchoe_blossfeldiana_indoor:2026-09-27:due",
-      "sent_at": "2026-09-27T10:47:39.952770+00:00",
-      "status": "sent"
-    },
-    {
-      "id": "telegram:1006:chlorophytum_comosum_spiderplant:2026-09-27:due",
-      "plant_id": "chlorophytum_comosum_spiderplant",
-      "dedupe_key": "chlorophytum_comosum_spiderplant:2026-09-27:due",
-      "sent_at": "2026-09-27T10:47:39.952770+00:00",
-      "status": "sent"
-    },
-    {
-      "id": "telegram:1007:aeonium_arboreum_shelf:2026-09-27:due",
-      "plant_id": "aeonium_arboreum_shelf",
-      "dedupe_key": "aeonium_arboreum_shelf:2026-09-27:due",
-      "sent_at": "2026-09-27T10:47:39.952770+00:00",
-      "status": "sent"
-    }
-  ],
+  "notification_events": [],
   "snoozes": [],
   "processed_actions": [
     "6620968297:1084:settings"

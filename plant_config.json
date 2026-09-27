@@ -1,127 +1,90 @@
 {
   "metadata": {
-    "version": "1.0",
-    "created_at": "2025-05-28",
-    "description": "Plant watering configuration for automated reminders"
+    "version": "1.1",
+    "created_at": "2026-09-27",
+    "description": "Plant watering configuration based on the owner's current plant photos"
   },
   "plants": [
     {
-      "id": "pelargonium_peltatum_balcony",
-      "name": "Ivy Geranium (Balcony)",
-      "type": "Ivy Geranium",
-      "scientific_name": "Pelargonium peltatum",
-      "location": "Outdoor balcony with full sun to partial shade",
+      "id": "pilea_peperomioides_indoor",
+      "name": "Chinese Money Plant",
+      "type": "Chinese Money Plant",
+      "scientific_name": "Pilea peperomioides",
+      "location": "Indoors in bright, indirect light",
       "watering_schedule": {
-        "frequency_days": 7,
-        "season_adjustments": {
-          "spring": 6,
-          "summer": 4,
-          "autumn": 8,
-          "winter": 12
-        }
-      },
-      "care_notes": "Thrives in bright, direct sunlight and well-draining soil. Allow the top layer of soil to dry slightly between waterings. Deadhead spent flowers to promote continuous blooming; pinch back leggy stems; protect from frost.",
-      "emoji": "🌸",
-      "active": true
-    },
-    {
-      "id": "calathea_makoyana_indoor",
-      "name": "Peacock Plant (Indoor)",
-      "type": "Peacock Plant",
-      "scientific_name": "Calathea makoyana",
-      "location": "Bright, indirect light indoors with high humidity",
-      "watering_schedule": {
-        "frequency_days": 7,
+        "frequency_days": 8,
         "season_adjustments": {
           "spring": 7,
-          "summer": 5,
-          "autumn": 10,
-          "winter": 14
-        }
-      },
-      "care_notes": "Keep soil evenly moist but not waterlogged; use filtered or rainwater to prevent leaf tip browning; maintain humidity above 60%; avoid direct sun; dust leaves regularly to promote healthy photosynthesis.",
-      "emoji": "🌿",
-      "active": true
-    },
-    {
-      "id": "dracaena_marginata_indoor",
-      "name": "Dragon Tree (Indoor Corner)",
-      "type": "Dragon Tree",
-      "scientific_name": "Dracaena marginata",
-      "location": "Bright, indirect light indoors; avoid drafts",
-      "watering_schedule": {
-        "frequency_days": 10,
-        "season_adjustments": {
-          "spring": 8,
           "summer": 6,
-          "autumn": 12,
-          "winter": 18
-        }
-      },
-      "care_notes": "Use well-draining soil; allow top 2-3 cm of soil to dry between waterings; avoid waterlogged conditions to prevent root rot; maintain moderate humidity; wipe leaves to remove dust; rotate periodically for even growth; feed lightly during active season.",
-      "emoji": "🌴",
-      "active": true
-    },
-    {
-      "id": "kalanchoe_blossfeldiana_indoor",
-      "name": "Flaming Katy (Indoor Window)",
-      "type": "Kalanchoe",
-      "scientific_name": "Kalanchoe blossfeldiana",
-      "location": "Bright, indirect light indoors near a window",
-      "watering_schedule": {
-        "frequency_days": 14,
-        "season_adjustments": {
-          "spring": 12,
-          "summer": 10,
-          "autumn": 16,
-          "winter": 21
-        }
-      },
-      "care_notes": "Use a well-draining succulent mix; allow the top 2-3 cm of soil to dry out between waterings; provide bright light or filtered sun; remove spent blooms to encourage new flowering; feed monthly with diluted balanced fertilizer; keep temperatures between 15-24 °C.",
-      "emoji": "🌵",
-      "active": true
-    },
-    {
-      "id": "chlorophytum_comosum_spiderplant",
-      "name": "Spider Plant (Indoor Table)",
-      "type": "Spider Plant",
-      "scientific_name": "Chlorophytum comosum",
-      "location": "Bright, indirect light indoors",
-      "watering_schedule": {
-        "frequency_days": 7,
-        "season_adjustments": {
-          "spring": 7,
-          "summer": 5,
-          "autumn": 10,
+          "autumn": 9,
           "winter": 14
         }
       },
-      "care_notes": "Use well-draining potting mix; allow the top 2 cm of soil to dry between waterings; maintain moderate humidity; trim any brown leaf tips; rotate pot periodically for even growth; remove and propagate plantlets to encourage fuller foliage.",
+      "care_notes": "Check the soil before watering and water only when the top 2-3 cm is dry. Water thoroughly, empty the outer pot or saucer, and rotate weekly for even growth. Avoid harsh direct afternoon sun.",
       "emoji": "🪴",
       "active": true
     },
     {
-      "id": "aeonium_arboreum_shelf",
-      "name": "Tree Aeonium (Shelf)",
-      "type": "Tree Aeonium",
-      "scientific_name": "Aeonium arboreum",
-      "location": "Bright, indirect light indoors or sunny windowsill",
+      "id": "dracaena_marginata_indoor",
+      "name": "Dragon Tree",
+      "type": "Dragon Tree",
+      "scientific_name": "Dracaena marginata",
+      "location": "Indoors in bright, indirect light",
       "watering_schedule": {
-        "frequency_days": 14,
+        "frequency_days": 12,
         "season_adjustments": {
-          "spring": 12,
-          "summer": 10,
-          "autumn": 16,
-          "winter": 21
+          "spring": 10,
+          "summer": 8,
+          "autumn": 12,
+          "winter": 18
         }
       },
-      "care_notes": "Plant in a well-draining succulent mix; allow soil to dry out completely between waterings; provide bright light and avoid cold drafts; remove spent rosettes at stem base; repot when rootbound.",
-      "emoji": "🌵",
+      "care_notes": "Water only when the top 3-5 cm of soil is dry, then drain fully. It tolerates slight dryness better than excess water. Use low-mineral or filtered water if leaf tips turn brown and keep away from cold drafts.",
+      "emoji": "🌴",
+      "active": true
+    },
+    {
+      "id": "ctenanthe_setosa_grey_star_indoor",
+      "name": "Never-Never Plant",
+      "type": "Ctenanthe Grey Star",
+      "scientific_name": "Ctenanthe setosa 'Grey Star'",
+      "location": "Indoors in bright, indirect light with good humidity",
+      "watering_schedule": {
+        "frequency_days": 7,
+        "season_adjustments": {
+          "spring": 6,
+          "summer": 5,
+          "autumn": 8,
+          "winter": 11
+        }
+      },
+      "care_notes": "Keep the soil lightly and evenly moist, but never waterlogged. Water when the top 1-2 cm starts to dry. Prefer rainwater or filtered water and provide good humidity; direct sun and dry air cause brown tips.",
+      "emoji": "🌿",
+      "active": true
+    },
+    {
+      "id": "balcony_plants_group",
+      "name": "Balcony Plants",
+      "type": "Mixed balcony group",
+      "scientific_name": "Mixed species",
+      "location": "Outdoor balcony",
+      "watering_schedule": {
+        "frequency_days": 8,
+        "season_adjustments": {
+          "spring": 7,
+          "summer": 4,
+          "autumn": 8,
+          "winter": 14
+        }
+      },
+      "care_notes": "This reminder covers every balcony pot as one group. Check each pot and water only those whose top 2-3 cm is dry; skip wet pots and reduce watering after rain. The dragon tree and purple tradescantia are cold-sensitive: bring them indoors before nights below about 10 °C and before any frost. Remove dead growth and make sure all pots drain freely.",
+      "emoji": "🌤️",
       "active": true
     }
-  ],  "notification_settings": {
+  ],
+  "notification_settings": {
     "time_to_send": "09:00",
-    "timezone": "UTC",
+    "timezone": "Europe/Paris",
     "reminder_types": [
       "due_today",
       "overdue",
