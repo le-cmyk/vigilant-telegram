@@ -200,6 +200,7 @@ def test_github_actions_only_runs_tests_without_schedule_or_secrets():
     assert "pytest" in workflow
     assert "TELEGRAM_BOT_TOKEN" not in workflow
     assert "cron: '13 * * * *'" in bot_workflow
+    assert "push:" in bot_workflow
     assert "contents: write" in bot_workflow
     assert "git add -f plant_state.json" in bot_workflow
     assert "TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}" in bot_workflow
