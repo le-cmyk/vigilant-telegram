@@ -143,6 +143,20 @@
       "dedupe_key": "balcony_plants_group:2026-09-27:due",
       "sent_at": "2026-09-27T13:30:16.104050+02:00",
       "status": "sent"
+    },
+    {
+      "id": "telegram:1097:ctenanthe_setosa_grey_star_indoor:2026-10-05:upcoming",
+      "plant_id": "ctenanthe_setosa_grey_star_indoor",
+      "dedupe_key": "ctenanthe_setosa_grey_star_indoor:2026-10-05:upcoming",
+      "sent_at": "2026-10-03T09:32:26.480632+02:00",
+      "status": "sent"
+    },
+    {
+      "id": "telegram:1098:balcony_plants_group:2026-10-05:upcoming",
+      "plant_id": "balcony_plants_group",
+      "dedupe_key": "balcony_plants_group:2026-10-05:upcoming",
+      "sent_at": "2026-10-03T09:32:26.480632+02:00",
+      "status": "sent"
     }
   ],
   "snoozes": [],
