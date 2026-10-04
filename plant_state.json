@@ -157,6 +157,13 @@
       "dedupe_key": "balcony_plants_group:2026-10-05:upcoming",
       "sent_at": "2026-10-03T09:32:26.480632+02:00",
       "status": "sent"
+    },
+    {
+      "id": "telegram:1099:pilea_peperomioides_indoor:2026-10-06:upcoming",
+      "plant_id": "pilea_peperomioides_indoor",
+      "dedupe_key": "pilea_peperomioides_indoor:2026-10-06:upcoming",
+      "sent_at": "2026-10-04T09:07:20.979406+02:00",
+      "status": "sent"
     }
   ],
   "snoozes": [],
