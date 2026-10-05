@@ -164,6 +164,20 @@
       "dedupe_key": "pilea_peperomioides_indoor:2026-10-06:upcoming",
       "sent_at": "2026-10-04T09:07:20.979406+02:00",
       "status": "sent"
+    },
+    {
+      "id": "telegram:1100:ctenanthe_setosa_grey_star_indoor:2026-10-05:due",
+      "plant_id": "ctenanthe_setosa_grey_star_indoor",
+      "dedupe_key": "ctenanthe_setosa_grey_star_indoor:2026-10-05:due",
+      "sent_at": "2026-10-05T09:48:36.433429+02:00",
+      "status": "sent"
+    },
+    {
+      "id": "telegram:1101:balcony_plants_group:2026-10-05:due",
+      "plant_id": "balcony_plants_group",
+      "dedupe_key": "balcony_plants_group:2026-10-05:due",
+      "sent_at": "2026-10-05T09:48:36.433429+02:00",
+      "status": "sent"
     }
   ],
   "snoozes": [],
