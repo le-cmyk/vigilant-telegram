@@ -185,6 +185,13 @@
       "dedupe_key": "pilea_peperomioides_indoor:2026-10-06:due",
       "sent_at": "2026-10-06T09:34:40.876088+02:00",
       "status": "sent"
+    },
+    {
+      "id": "telegram:1103:dracaena_marginata_indoor:2026-10-09:upcoming",
+      "plant_id": "dracaena_marginata_indoor",
+      "dedupe_key": "dracaena_marginata_indoor:2026-10-09:upcoming",
+      "sent_at": "2026-10-07T09:35:57.725575+02:00",
+      "status": "sent"
     }
   ],
   "snoozes": [],
