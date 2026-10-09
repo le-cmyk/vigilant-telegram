@@ -192,6 +192,13 @@
       "dedupe_key": "dracaena_marginata_indoor:2026-10-09:upcoming",
       "sent_at": "2026-10-07T09:35:57.725575+02:00",
       "status": "sent"
+    },
+    {
+      "id": "telegram:1104:dracaena_marginata_indoor:2026-10-09:due",
+      "plant_id": "dracaena_marginata_indoor",
+      "dedupe_key": "dracaena_marginata_indoor:2026-10-09:due",
+      "sent_at": "2026-10-09T09:36:38.561868+02:00",
+      "status": "sent"
     }
   ],
   "snoozes": [],
